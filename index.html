@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ET International DMCC — Gas &amp; Steam Turbine Spare Parts Supplier, Dubai</title>
+<meta name="description" content="ET International DMCC supplies OEM-equivalent spare parts and technical solutions for heavy-duty gas and steam turbines. ISO 9001:2015 certified. Dubai, UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ET INTERNATIONAL — DESIGN TOKENS
+   ============================================================ */
+:root{
+  --void:#080B10; --surface:#0F1620; --surface-raised:#16202C;
+  --steel:#243140; --steel-light:#8695A6; --white:#F2F5F8;
+  --cyan:#2FC6E0; --cyan-dim:#1A7C8E; --heat:#E2622A;
+
+  --font-display:'Manrope',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+
+  --ease:cubic-bezier(.22,1,.36,1);
+  --dur-fast:180ms; --dur-base:320ms; --dur-slow:700ms;
+
+  --max:1280px; --gutter:24px; --margin:20px;
+  --sec-y:120px;
+}
+@media (max-width:860px){ :root{ --sec-y:72px; } }
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--void); color:var(--white);
+  font-family:var(--font-body); font-size:16px; line-height:1.65;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:2px}
+
+/* Type */
+.display-xl{font-family:var(--font-display);font-weight:800;font-size:clamp(44px,6vw,76px);line-height:1.04;letter-spacing:-.03em}
+.display-l{font-family:var(--font-display);font-weight:700;font-size:clamp(34px,4vw,52px);line-height:1.1;letter-spacing:-.03em}
+h2,.h2{font-family:var(--font-display);font-weight:700;font-size:clamp(26px,2.6vw,36px);line-height:1.15;letter-spacing:-.02em}
+h3,.h3{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.3;letter-spacing:-.01em}
+.body-l{font-size:18px;color:#C7D2DD;max-width:68ch}
+p{max-width:68ch;color:#C7D2DD}
+.mono{font-family:var(--font-mono);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em}
+.eyebrow{font-family:var(--font-mono);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--cyan);display:block;margin-bottom:14px}
+.caption{font-size:14px;color:var(--steel-light)}
+.dim{color:var(--steel-light)}
+
+/* Layout */
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--margin)}
+.section{padding-block:var(--sec-y)}
+.section--line{border-top:1px solid var(--steel)}
+.sec-head{margin-bottom:48px;max-width:760px}
+.sec-head p{margin-top:16px}
+.grid{display:grid;gap:var(--gutter)}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:980px){.cols-3,.cols-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.cols-2,.cols-3,.cols-4{grid-template-columns:1fr}}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--font-mono);font-size:12px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.12em;
+  padding:14px 22px;border-radius:2px;border:1px solid var(--cyan);
+  background:var(--cyan);color:var(--void);cursor:pointer;
+  transition:background var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease);
+}
+.btn:hover{background:#5FDCF0;border-color:#5FDCF0;transform:translateY(-1px)}
+.btn--ghost{background:transparent;color:var(--white);border-color:var(--steel)}
+.btn--ghost:hover{background:var(--surface-raised);border-color:var(--cyan);color:var(--white)}
+.btn--sm{padding:10px 16px}
+.btn[disabled]{opacity:.4;pointer-events:none}
+.link-c{color:var(--cyan);font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em}
+.link-c:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--steel);border-radius:4px;padding:28px;transition:border-color var(--dur-base) var(--ease),background var(--dur-base) var(--ease)}
+.card:hover{border-color:var(--cyan-dim);background:var(--surface-raised)}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ============ HEADER ============ */
+.hdr{position:fixed;inset:0 0 auto;z-index:60;transition:background var(--dur-base) var(--ease),border-color var(--dur-base) var(--ease),backdrop-filter var(--dur-base)}
+.hdr{border-bottom:1px solid transparent}
+.hdr.solid{background:rgba(8,11,16,.82);backdrop-filter:blur(14px);border-bottom-color:var(--steel)}
+.hdr-in{max-width:var(--max);margin-inline:auto;padding:0 var(--margin);height:76px;display:flex;align-items:center;gap:32px}
+.logo{display:flex;align-items:baseline;gap:8px;font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-.02em}
+.logo b{color:var(--cyan)}
+.logo span{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;color:var(--steel-light);text-transform:uppercase}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#C7D2DD;padding:6px 0;position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--cyan);transition:right var(--dur-base) var(--ease)}
+.nav a:hover::after,.nav a.active::after{right:0}
+.nav a.active{color:var(--white)}
+.hdr .btn{flex:none}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--steel);border-radius:2px;padding:10px;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:var(--white);margin:3px 0}
+@media (max-width:1080px){ .nav,.hdr>.hdr-in>.btn{display:none} .burger{display:block} }
+
+/* Mobile menu */
+.mm{position:fixed;inset:0;z-index:70;background:var(--void);transform:translateX(100%);transition:transform var(--dur-base) var(--ease);display:flex;flex-direction:column;padding:24px var(--margin)}
+.mm.open{transform:none}
+.mm-top{display:flex;align-items:center;justify-content:space-between;height:52px}
+.mm nav{display:flex;flex-direction:column;gap:4px;margin-top:24px}
+.mm nav a{font-family:var(--font-display);font-weight:700;font-size:26px;padding:12px 0;border-bottom:1px solid var(--steel)}
+.mm-foot{margin-top:auto;padding-top:24px;border-top:1px solid var(--steel);display:grid;gap:12px}
+.close{background:none;border:1px solid var(--steel);border-radius:2px;width:40px;height:40px;cursor:pointer;color:var(--white)}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding-top:76px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(1000px 620px at 72% 46%, rgba(47,198,224,.13), transparent 62%),
+  radial-gradient(700px 460px at 78% 62%, rgba(226,98,42,.07), transparent 60%),
+  linear-gradient(180deg,#080B10 0%,#0C121B 55%,#080B10 100%);}
+.hero-grid{position:absolute;inset:0;opacity:.30;
+  background-image:linear-gradient(var(--steel) 1px,transparent 1px),linear-gradient(90deg,var(--steel) 1px,transparent 1px);
+  background-size:88px 88px;
+  -webkit-mask-image:radial-gradient(circle at 70% 50%,#000 0%,transparent 72%);
+  mask-image:radial-gradient(circle at 70% 50%,#000 0%,transparent 72%);}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;width:100%}
+@media (max-width:1080px){.hero-in{grid-template-columns:1fr}.hero-art{order:-1}}
+.hero h1{margin:10px 0 22px}
+.hero h1 em{font-style:normal;color:var(--cyan)}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 26px}
+.trust-line{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--steel-light);text-transform:uppercase;line-height:2}
+.scroll-ind{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-ind .mono{color:var(--steel-light);font-size:10px}
+.scroll-ind i{display:block;width:1px;height:44px;background:linear-gradient(var(--cyan),transparent);animation:drop 2.4s var(--ease) infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-width:1080px){.scroll-ind{display:none}}
+
+.rotor{animation:spin 26s linear infinite;transform-origin:200px 200px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.callout line,.callout circle{stroke:var(--cyan);fill:none}
+.callout text{font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;fill:var(--steel-light);text-transform:uppercase}
+.draw{stroke-dasharray:200;stroke-dashoffset:200;animation:draw 1.1s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fade-in{opacity:0;animation:fi .8s var(--ease) forwards}
+@keyframes fi{to{opacity:1}}
+
+/* ============ TRUST BAR ============ */
+.trust{border-block:1px solid var(--steel);background:var(--surface)}
+.trust-in{display:grid;grid-template-columns:repeat(5,1fr)}
+.trust-item{padding:26px 22px;border-left:1px solid var(--steel);display:flex;gap:12px;align-items:flex-start}
+.trust-item:first-child{border-left:0}
+.trust-item .mono{color:var(--white);line-height:1.5}
+.tick{flex:none;width:14px;height:14px;margin-top:2px;border:1px solid var(--cyan);border-radius:1px;position:relative}
+.tick::after{content:"";position:absolute;inset:3px;background:var(--cyan)}
+@media (max-width:980px){.trust-in{grid-template-columns:repeat(2,1fr)}.trust-item{border-left:1px solid var(--steel);border-top:1px solid var(--steel)}}
+@media (max-width:520px){.trust-in{grid-template-columns:1fr}}
+
+/* ============ EXPLORER ============ */
+.explorer{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:start}
+@media (max-width:980px){.explorer{grid-template-columns:1fr}}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:26px}
+.tab{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;padding:10px 14px;border:1px solid var(--steel);border-radius:2px;background:transparent;color:var(--steel-light);cursor:pointer;transition:all var(--dur-fast) var(--ease)}
+.tab:hover{color:var(--white);border-color:var(--cyan-dim)}
+.tab.on{background:var(--surface-raised);border-color:var(--cyan);color:var(--white)}
+.stage{background:var(--surface);border:1px solid var(--steel);border-radius:4px;padding:16px;position:relative}
+.zone{cursor:pointer}
+.zone .hit{fill:transparent}
+.zone .shape{stroke:var(--steel);stroke-width:1;fill:#141E29;transition:fill var(--dur-base) var(--ease),stroke var(--dur-base) var(--ease)}
+.zone:hover .shape,.zone.on .shape{stroke:var(--cyan);fill:#0F2733}
+.zone.hot:hover .shape,.zone.hot.on .shape{stroke:var(--heat);fill:#241610}
+.zone .zlabel{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.1em;fill:var(--steel-light);text-transform:uppercase;pointer-events:none;transition:fill var(--dur-base)}
+.zone:hover .zlabel,.zone.on .zlabel{fill:var(--white)}
+.panel{background:rgba(15,22,32,.86);backdrop-filter:blur(10px);border:1px solid var(--steel);border-radius:4px;padding:26px;position:sticky;top:100px}
+.panel.hot{border-color:rgba(226,98,42,.5)}
+.panel dl{display:grid;gap:14px;margin:18px 0}
+.panel dt{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan)}
+.panel.hot dt{color:var(--heat)}
+.panel dd{font-size:14px;color:#C7D2DD}
+.panel-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.hint{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-light)}
+
+/* Mobile explorer accordion */
+.acc{border:1px solid var(--steel);border-radius:4px;overflow:hidden}
+.acc-item+.acc-item{border-top:1px solid var(--steel)}
+.acc-btn{width:100%;text-align:left;background:var(--surface);border:0;padding:16px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.acc-btn[aria-expanded="true"]{color:var(--cyan)}
+.acc-body{padding:0 18px 18px;background:var(--surface);display:none}
+.acc-body.open{display:block}
+
+/* ============ PRODUCTS ============ */
+.pcard{position:relative;overflow:hidden;padding:0;display:flex;flex-direction:column}
+.pcard-img{position:relative;aspect-ratio:4/3;background:linear-gradient(140deg,#131C27,#0A1119);border-bottom:1px solid var(--steel);overflow:hidden}
+.pcard-img svg{position:absolute;inset:0;width:100%;height:100%;transition:transform var(--dur-slow) var(--ease)}
+.pcard:hover .pcard-img svg{transform:scale(1.06)}
+.pcard-img .outline{stroke:var(--cyan);fill:none;stroke-width:1;stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 1.1s var(--ease)}
+.pcard:hover .outline{stroke-dashoffset:0}
+.pcard-body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pcard-body p{font-size:14px;flex:1}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-light);border:1px solid var(--steel);border-radius:2px;padding:3px 7px}
+.pcard-foot{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:0 22px 22px}
+.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px;margin-bottom:32px}
+@media (max-width:980px){.filters{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.filters{grid-template-columns:1fr}}
+.field{width:100%;background:var(--surface-raised);border:1px solid var(--steel);border-radius:2px;padding:12px 14px;font-size:14px;transition:border-color var(--dur-fast)}
+.field:focus{border-color:var(--cyan);outline:none}
+select.field{appearance:none;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#C7D2DD;background-image:linear-gradient(45deg,transparent 50%,var(--steel-light) 50%),linear-gradient(135deg,var(--steel-light) 50%,transparent 50%);background-position:calc(100% - 18px) 18px,calc(100% - 13px) 18px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:36px}
+
+/* Spec table */
+.spec{width:100%;border-collapse:collapse;border:1px solid var(--steel)}
+.spec th,.spec td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--steel);font-size:14px;vertical-align:top}
+.spec th{width:38%;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--steel-light);font-weight:500;background:var(--surface)}
+.spec tr:last-child th,.spec tr:last-child td{border-bottom:0}
+.ph{color:var(--steel-light);font-style:italic}
+.ph::after{content:" ⓘ";font-style:normal;color:var(--cyan-dim);font-size:11px}
+
+/* Process flow */
+.flow{position:relative;padding-left:34px}
+.flow::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--steel)}
+.flow-line{position:absolute;left:7px;top:6px;width:1px;background:var(--cyan);height:0;transition:height 1.4s var(--ease)}
+.step{position:relative;padding:0 0 26px}
+.step::before{content:"";position:absolute;left:-31px;top:7px;width:9px;height:9px;border:1px solid var(--cyan);background:var(--void);border-radius:1px}
+.step .mono{color:var(--cyan);display:block;margin-bottom:4px}
+.step p{font-size:14px;margin-top:2px}
+
+/* Map */
+.map-wrap{border:1px solid var(--steel);border-radius:4px;background:var(--surface);padding:24px;position:relative;overflow:hidden}
+.arc{fill:none;stroke:var(--cyan);stroke-width:1;stroke-dasharray:4 6;animation:dash 3s linear infinite;opacity:.75}
+@keyframes dash{to{stroke-dashoffset:-100}}
+.dot{fill:var(--cyan)}
+.hub{fill:var(--heat)}
+.pulse{fill:none;stroke:var(--heat);animation:pulse 3s var(--ease) infinite}
+@keyframes pulse{0%{r:4;opacity:.9}100%{r:22;opacity:0}}
+.land{fill:#111A25;stroke:var(--steel);stroke-width:.7}
+
+/* CTA band */
+.band{background:linear-gradient(120deg,#0C1621,#0A1F29 60%,#0C1621);border-block:1px solid var(--steel);position:relative;overflow:hidden}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 40%,rgba(47,198,224,.09) 50%,transparent 60%);transform:translateX(-40%);animation:sweep 7s var(--ease) infinite}
+@keyframes sweep{to{transform:translateX(60%)}}
+.band-in{position:relative;z-index:1;display:flex;gap:32px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+
+/* ============ RFQ WIZARD ============ */
+.rail{display:flex;gap:0;margin-bottom:40px;border:1px solid var(--steel);border-radius:2px;overflow:hidden}
+.rail-step{flex:1;padding:12px 10px;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-light);background:var(--surface);border-left:1px solid var(--steel);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rail-step:first-child{border-left:0}
+.rail-step.on{background:var(--surface-raised);color:var(--cyan)}
+.rail-step.done{color:var(--white)}
+.rail-step.done::before{content:"✓ ";color:var(--cyan)}
+@media (max-width:860px){.rail-step{font-size:0;padding:10px 4px}.rail-step::after{content:"";display:block;height:3px;background:var(--steel)}.rail-step.on::after,.rail-step.done::after{background:var(--cyan)}.rail-step.done::before{content:""}}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:700px){.fgrid{grid-template-columns:1fr}}
+label.lbl{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel-light);margin-bottom:7px}
+label.lbl .req{color:var(--cyan)}
+.err{border-color:var(--heat)!important}
+.errmsg{font-size:12px;color:var(--heat);margin-top:6px;display:none}
+.errmsg.show{display:block}
+.li{border:1px solid var(--steel);border-radius:4px;padding:20px;background:var(--surface);margin-bottom:14px;position:relative}
+.li-no{position:absolute;top:-9px;left:16px;background:var(--void);padding:0 8px;font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--cyan)}
+.li-del{position:absolute;top:14px;right:14px;background:none;border:1px solid var(--steel);border-radius:2px;padding:4px 9px;font-family:var(--font-mono);font-size:10px;color:var(--steel-light);cursor:pointer}
+.li-del:hover{border-color:var(--heat);color:var(--heat)}
+.drop{border:1px dashed var(--steel);border-radius:4px;padding:40px 24px;text-align:center;background:var(--surface);transition:all var(--dur-fast)}
+.drop.over{border-color:var(--cyan);background:var(--surface-raised)}
+.flist{margin-top:14px;display:grid;gap:8px}
+.frow{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--steel);border-radius:2px;padding:10px 14px;background:var(--surface);font-family:var(--font-mono);font-size:11px}
+.wiz-nav{display:flex;justify-content:space-between;gap:12px;margin-top:36px;padding-top:26px;border-top:1px solid var(--steel)}
+.review-block{border:1px solid var(--steel);border-radius:4px;margin-bottom:14px}
+.review-block h3{padding:14px 18px;border-bottom:1px solid var(--steel);background:var(--surface);font-size:14px;display:flex;justify-content:space-between;align-items:center}
+.review-block .kv{display:grid;grid-template-columns:200px 1fr;gap:10px 18px;padding:18px}
+.review-block .kv dt{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel-light);padding-top:3px}
+.review-block .kv dd{font-size:14px;color:var(--white)}
+@media (max-width:620px){.review-block .kv{grid-template-columns:1fr;gap:2px 0}.review-block .kv dd{margin-bottom:10px}}
+.check{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--steel);border-radius:4px;padding:18px;background:var(--surface)}
+.check input{margin-top:4px;accent-color:var(--cyan);width:16px;height:16px;flex:none}
+.check label{font-size:14px;color:#C7D2DD}
+.conf{text-align:center;padding:80px 0}
+.ref{font-family:var(--font-mono);font-size:clamp(22px,4vw,34px);letter-spacing:.16em;color:var(--cyan);border:1px solid var(--cyan-dim);border-radius:2px;padding:20px 28px;display:inline-flex;gap:14px;align-items:center;background:var(--surface);margin:26px 0}
+.copy{background:none;border:1px solid var(--steel);border-radius:2px;padding:6px 10px;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--steel-light);cursor:pointer}
+.copy:hover{border-color:var(--cyan);color:var(--cyan)}
+
+/* Footer */
+.ftr{border-top:1px solid var(--steel);background:var(--surface);position:relative;overflow:hidden}
+.ftr-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1.3fr;gap:32px;padding-block:64px 40px;position:relative;z-index:1}
+@media (max-width:980px){.ftr-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.ftr-grid{grid-template-columns:1fr}}
+.ftr h4{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-light);margin-bottom:16px;font-weight:500}
+.ftr ul{list-style:none;display:grid;gap:9px}
+.ftr ul a{font-size:14px;color:#C7D2DD}
+.ftr ul a:hover{color:var(--cyan)}
+.ftr-bot{border-top:1px solid var(--steel);padding-block:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative;z-index:1}
+.ftr-line{position:absolute;bottom:0;left:0;right:0;height:120px;opacity:.16;pointer-events:none}
+.disclaimer{font-size:11px;color:var(--steel-light);max-width:100%;border-top:1px solid var(--steel);padding-block:18px;line-height:1.7}
+
+/* Misc */
+.pagehead{padding-top:150px;padding-bottom:64px;border-bottom:1px solid var(--steel);background:radial-gradient(700px 320px at 20% 0%,rgba(47,198,224,.08),transparent 70%)}
+.crumbs{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-light);margin-bottom:18px}
+.crumbs a:hover{color:var(--cyan)}
+.crumbs span{color:var(--steel)}
+.note{border-left:2px solid var(--cyan-dim);background:var(--surface);padding:14px 18px;font-size:13px;color:var(--steel-light);border-radius:0 2px 2px 0}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120%);z-index:90;background:var(--surface-raised);border:1px solid var(--cyan);border-radius:2px;padding:14px 22px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:transform var(--dur-base) var(--ease)}
+.toast.on{transform:translate(-50%,0)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;top:-60px;left:20px;z-index:100;background:var(--cyan);color:var(--void);padding:10px 16px;border-radius:2px;transition:top var(--dur-fast)}
+.skip:focus{top:12px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:1ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .pcard-img .outline{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr" id="hdr">
+  <div class="hdr-in">
+    <a class="logo" href="#/"><span style="font-family:var(--font-display);font-size:19px;letter-spacing:-.02em;text-transform:none;color:var(--white)">ET<b>·</b>International</span><span>DMCC</span></a>
+    <nav class="nav" id="nav"></nav>
+    <a class="btn btn--sm" href="#/request-a-quote">Request a Quote</a>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mm" id="mm" aria-hidden="true">
+  <div class="mm-top">
+    <span class="logo"><span style="font-family:var(--font-display);font-size:19px;color:var(--white)">ET<b style="color:var(--cyan)">·</b>International</span></span>
+    <button class="close" id="mmClose" aria-label="Close menu">✕</button>
+  </div>
+  <nav id="mmNav"></nav>
+  <div class="mm-foot">
+    <a class="btn" href="#/request-a-quote">Request a Quote</a>
+    <a class="mono dim" href="mailto:sales@etinternational.ae">sales@etinternational.ae</a>
+    <a class="mono dim" href="tel:+97145897122">+971 4 589 7122</a>
+  </div>
+</div>
+
+<main id="main"></main>
+<footer class="ftr" id="ftr"></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   DATA LAYER — mirrors the CMS collections in the spec.
+   In production these come from the API; shape is identical.
+   ============================================================ */
+const CONFIRM = "Confirm with our technical team";
+const REVIEW  = "Available upon technical review";
+
+const PLATFORMS = [
+  {slug:"frame-3", name:"Frame 3", type:"gas", summary:"Legacy heavy-duty gas turbine frame. Component supply supported through drawing or sample assessment where OEM data is unavailable."},
+  {slug:"frame-5", name:"Frame 5", type:"gas", summary:"Widely deployed industrial gas turbine. Compressor, combustion and hot-gas-path component supply."},
+  {slug:"frame-6", name:"Frame 6", type:"gas", summary:"Mid-range heavy-duty frame used across industrial and utility applications."},
+  {slug:"frame-7", name:"Frame 7", type:"gas", summary:"Utility-scale heavy-duty gas turbine frame. Full component-category coverage."},
+  {slug:"frame-9", name:"Frame 9", type:"gas", summary:"Large-frame utility gas turbine. Component supply engineered to approved drawings and customer requirements."},
+  {slug:"steam-turbine-components", name:"Steam Turbine Components", type:"steam", summary:"Rotating and stationary components, casings, bolting and support systems for steam turbine sets."},
+  {slug:"custom-and-reverse-engineered", name:"Custom & Reverse-Engineered", type:"custom", summary:"Components engineered from first principles where drawings, samples or dimensional data are supplied."}
+];
+
+const ZONES = [
+  {slug:"compressor-section", label:"Compressor section", hot:false, desc:"Axial compressor stages that raise inlet air pressure before combustion. Rotating and stationary aerofoil supply, including staged blade sets.", app:"Air compression stages across all supported gas turbine frames.", support:"Dimensional inspection, material verification and staged-set supply against approved drawings.", cats:["compressor-rotor-blades","compressor-stator-blades","inlet-guide-vanes","shrouds"]},
+  {slug:"combustion-section", label:"Combustion section", hot:true, desc:"Combustion hardware operating in the hot gas path, including fuel delivery and cross-ignition components.", app:"Fuel-air mixing, ignition propagation and hot-gas containment.", support:"Engineering review of existing hardware, material planning and inspection documentation.", cats:["fuel-nozzles","crossfire-tubes","flow-sleeves"]},
+  {slug:"turbine-section", label:"Turbine section", hot:true, desc:"Hot-gas-path stationary hardware and support structures downstream of combustion.", app:"Gas expansion stages and hot-gas-path containment.", support:"Drawing or sample assessment, 2D and 3D modelling, manufacturing coordination.", cats:["nozzle-support-rings","shrouds"]},
+  {slug:"rotor-assembly", label:"Rotor assembly", hot:false, desc:"Rotating assembly components including blade sets and associated fixings.", app:"Rotating stages across compressor and turbine sections.", support:"Staged supply, balancing requirements confirmed at technical review.", cats:["compressor-rotor-blades","bolting-and-fasteners"]},
+  {slug:"stator-assembly", label:"Stator assembly", hot:false, desc:"Stationary aerofoil rows and associated hardware directing flow between rotating stages.", app:"Flow conditioning between compressor stages.", support:"Reverse engineering from sample where drawings are unavailable.", cats:["compressor-stator-blades","inlet-guide-vanes"]},
+  {slug:"fuel-system", label:"Fuel system", hot:true, desc:"Fuel delivery hardware upstream of and within the combustion system.", app:"Gas and liquid fuel delivery, subject to configuration confirmation.", support:"Configuration review before quotation.", cats:["fuel-nozzles"]},
+  {slug:"bearings-and-fasteners", label:"Bearings & fasteners", hot:false, desc:"Journal and thrust bearing hardware, bolting, studs and associated fixings.", app:"Rotor support and mechanical joining across the machine.", support:"Material verification and certification documentation on request.", cats:["bearings","bolting-and-fasteners"]},
+  {slug:"casings-and-support", label:"Casings & support systems", hot:false, desc:"Casing sections, support structures and associated engineered hardware.", app:"Machine containment and structural support.", support:"Large-component manufacturing coordination and inspection.", cats:["casings","custom-engineered-components"]}
+];
+
+const CATEGORIES = [
+  {slug:"compressor-rotor-blades", name:"Compressor Rotor Blades", zone:"compressor-section", services:["Spare Parts Supply","Reverse Engineering"], one:"Rotating aerofoils for axial compressor stages, supplied individually or as staged sets.",
+   overview:"Compressor rotor blades are supplied against approved drawings or through dimensional assessment of a supplied sample. Staged sets can be matched to a specific machine configuration following technical review.",
+   apps:["Axial compressor stages","Staged set replacement during outage","Individual stage replacement"], platforms:["frame-5","frame-6","frame-7","frame-9"]},
+  {slug:"compressor-stator-blades", name:"Compressor Stator Blades", zone:"stator-assembly", services:["Spare Parts Supply","Reverse Engineering"], one:"Stationary aerofoil rows that condition airflow between rotating compressor stages.",
+   overview:"Stator blade rows are engineered to approved drawings or reverse engineered from a supplied sample, with staged sets matched to the machine configuration.",
+   apps:["Inter-stage flow conditioning","Row replacement during overhaul"], platforms:["frame-5","frame-6","frame-7","frame-9"]},
+  {slug:"shrouds", name:"Shrouds", zone:"turbine-section", services:["Spare Parts Supply","Component Engineering"], one:"Stationary hot-gas-path hardware forming the outer flow boundary at turbine stages.",
+   overview:"Shroud hardware is supplied following technical review of the machine configuration and existing hardware condition.",
+   apps:["Turbine stage flow containment","Clearance control"], platforms:["frame-5","frame-6","frame-7","frame-9"]},
+  {slug:"inlet-guide-vanes", name:"Inlet Guide Vanes", zone:"compressor-section", services:["Spare Parts Supply","Reverse Engineering"], one:"Variable and fixed vanes controlling compressor inlet airflow.",
+   overview:"IGV hardware is supplied against approved drawings or engineered from supplied dimensional data and samples.",
+   apps:["Compressor inlet airflow control","Part-load operation"], platforms:["frame-5","frame-6","frame-7","frame-9"]},
+  {slug:"fuel-nozzles", name:"Fuel Nozzles", zone:"combustion-section", services:["Spare Parts Supply","Component Engineering","Prototype Development"], one:"Fuel delivery hardware for the combustion system, configuration dependent.",
+   overview:"Fuel nozzle supply requires confirmation of combustion system configuration and fuel type before quotation. Engineering review is carried out on the existing hardware or drawings supplied.",
+   apps:["Gas or liquid fuel delivery","Combustion system overhaul"], platforms:["frame-5","frame-6","frame-7","frame-9"]},
+  {slug:"crossfire-tubes", name:"Crossfire Tubes", zone:"combustion-section", services:["Spare Parts Supply"], one:"Cross-ignition hardware connecting adjacent combustion chambers.",
+   overview:"Crossfire tubes and retainers are supplied against approved drawings or assessed samples.",
+   apps:["Cross-ignition between combustion cans","Combustion inspection scope"], platforms:["frame-5","frame-6","frame-7","frame-9"]},
+  {slug:"flow-sleeves", name:"Flow Sleeves", zone:"combustion-section", services:["Spare Parts Supply","Component Engineering"], one:"Combustion system hardware directing air flow around the liner.",
+   overview:"Flow sleeve supply follows technical review of the combustion configuration.",
+   apps:["Combustion air distribution","Liner cooling flow"], platforms:["frame-5","frame-6","frame-7","frame-9"]},
+  {slug:"nozzle-support-rings", name:"Nozzle Support Rings", zone:"turbine-section", services:["Spare Parts Supply","Component Engineering"], one:"Structural rings supporting turbine nozzle assemblies.",
+   overview:"Support ring hardware is manufactured to approved drawings and inspected before release.",
+   apps:["Turbine nozzle support","Hot-gas-path structural assembly"], platforms:["frame-6","frame-7","frame-9"]},
+  {slug:"casings", name:"Casings", zone:"casings-and-support", services:["Spare Parts Supply","Manufacturing Coordination"], one:"Large engineered casing sections and structural housings.",
+   overview:"Casing sections are supplied through coordinated manufacturing following drawing review and material planning.",
+   apps:["Machine containment","Structural housing replacement"], platforms:["frame-5","frame-6","frame-7","frame-9","steam-turbine-components"]},
+  {slug:"bearings", name:"Bearings", zone:"bearings-and-fasteners", services:["Spare Parts Supply"], one:"Journal and thrust bearing hardware for rotor support.",
+   overview:"Bearing supply follows confirmation of machine configuration and existing hardware details.",
+   apps:["Rotor support","Thrust load management"], platforms:["frame-5","frame-6","frame-7","frame-9","steam-turbine-components"]},
+  {slug:"bolting-and-fasteners", name:"Bolting & Fasteners", zone:"bearings-and-fasteners", services:["Spare Parts Supply","Material Selection Support"], one:"Studs, bolts, nuts and fixings for turbine assembly and casing joints.",
+   overview:"Fastener supply includes material verification and certification documentation where required.",
+   apps:["Casing joints","Rotor assembly fixings","Support structures"], platforms:["frame-3","frame-5","frame-6","frame-7","frame-9","steam-turbine-components"]},
+  {slug:"custom-engineered-components", name:"Custom Engineered Components", zone:"casings-and-support", services:["Reverse Engineering","2D Technical Drawings","3D Modelling","Prototype Development"], one:"Components engineered from first principles where drawings or samples are supplied.",
+   overview:"Where a component is obsolete or drawings are unavailable, the component is engineered from a supplied sample or dimensional data through 2D and 3D modelling, material planning and inspection.",
+   apps:["Obsolete component replacement","Machines without available OEM data"], platforms:["frame-3","frame-5","frame-6","frame-7","frame-9","steam-turbine-components","custom-and-reverse-engineered"]}
+];
+
+const SERVICES = [
+  {slug:"spare-parts-supply", name:"Spare Parts Supply", desc:"Supply of OEM-equivalent components for heavy-duty gas and steam turbines against approved drawings and customer requirements.", benefits:["Single point of contact for multi-category requirements","Component supply matched to machine configuration","Documentation issued with every shipment"], cats:["compressor-rotor-blades","fuel-nozzles","bearings"]},
+  {slug:"component-engineering", name:"Component Engineering", desc:"Engineering review of component requirements, from drawing assessment through to manufacturing definition.", benefits:["Requirement clarified before quotation","Manufacturing route defined against the application","Reduced iteration during production"], cats:["shrouds","flow-sleeves"]},
+  {slug:"reverse-engineering", name:"Reverse Engineering", desc:"Engineering of components from a supplied sample or dimensional data where drawings are unavailable or the part is obsolete.", benefits:["Route to supply for obsolete components","Dimensional record created and retained","Basis for repeat supply"], cats:["custom-engineered-components","compressor-stator-blades"]},
+  {slug:"2d-technical-drawings", name:"2D Technical Drawings", desc:"Production of manufacturing drawings from samples, measurements or existing documentation.", benefits:["Manufacturing-ready documentation","Clear basis for inspection","Retained for future orders"], cats:["custom-engineered-components"]},
+  {slug:"3d-modelling", name:"3D Modelling", desc:"Three-dimensional modelling of components to support manufacturing planning and prototype development.", benefits:["Geometry verified before manufacture","Supports complex aerofoil and casing geometry"], cats:["custom-engineered-components"]},
+  {slug:"prototype-development", name:"Prototype Development", desc:"Development and assessment of a first article before series manufacture.", benefits:["Fit and geometry confirmed before production","Risk reduced on non-standard components"], cats:["fuel-nozzles","custom-engineered-components"]},
+  {slug:"material-selection-support", name:"Material Selection Support", desc:"Support in defining material requirements appropriate to the component application and operating environment.", benefits:["Material defined against the duty","Verification documentation available"], cats:["bolting-and-fasteners"]},
+  {slug:"manufacturing-coordination", name:"Manufacturing Coordination", desc:"Coordination of manufacture across a qualified international vendor network, with stage control through production.", benefits:["Manufacturing route matched to the component","Progress visible through production stages"], cats:["casings"]},
+  {slug:"inspection-and-quality-documentation", name:"Inspection & Quality Documentation", desc:"Dimensional inspection, material verification and issue of quality documentation against the agreed requirement.", benefits:["Traceability from material to delivery","Customer-specific requirements accommodated"], cats:["compressor-rotor-blades","bearings"]},
+  {slug:"inventory-and-long-term-purchase-support", name:"Inventory & Long-Term Purchase Support", desc:"Support for long-term purchase agreements, including stocking of selected part numbers against agreed requirements.", benefits:["Selected part numbers held to agreement","Improved availability against planned outages"], cats:["bolting-and-fasteners","crossfire-tubes"]},
+  {slug:"expedited-supply-support", name:"Expedited Supply Support", desc:"Prioritised handling of urgent component requirements, subject to manufacturing capacity at the time of enquiry.", benefits:["Requirement assessed on receipt","Route to supply confirmed early"], cats:["fuel-nozzles"]},
+  {slug:"global-logistics-coordination", name:"Global Logistics Coordination", desc:"Coordination of international shipment and documentation to the agreed delivery location and Incoterms.", benefits:["Documentation prepared with the shipment","Delivery coordinated to site requirements"], cats:["casings"]}
+];
+
+const INDUSTRIES = [
+  {n:"Power Generation", d:"Utility and industrial generating plant operating heavy-duty gas and steam turbine fleets."},
+  {n:"Utilities", d:"Network operators maintaining generating assets against planned outage schedules."},
+  {n:"Independent Power Producers", d:"IPPs managing component availability and long-term supply commitments."},
+  {n:"Industrial Plants", d:"Process and manufacturing facilities operating captive turbine generation."},
+  {n:"Oil & Gas Facilities", d:"Upstream, midstream and downstream facilities with turbine-driven equipment."},
+  {n:"Turbine Repair & Service Companies", d:"Service providers sourcing components for overhaul and repair scopes."},
+  {n:"Engineering & Procurement Companies", d:"EPC organisations requiring component supply against project schedules."},
+  {n:"International Spare-Parts Distributors", d:"Distributors requiring an engineering-capable supply partner."}
+];
+
+const PROCESS = [
+  ["01","Customer requirement","Requirement received through RFQ, drawing or sample, with the machine configuration confirmed."],
+  ["02","Technical review","The component requirement is reviewed against the application and available data."],
+  ["03","Drawing or sample assessment","Existing drawings are assessed, or a supplied sample is measured and recorded."],
+  ["04","2D and 3D modelling","Geometry is modelled to a manufacturing-ready definition."],
+  ["05","Material and manufacturing planning","Material and manufacturing route are defined against the duty and the schedule."],
+  ["06","Prototype or production","A first article is produced where required, ahead of series manufacture."],
+  ["07","Inspection and quality control","Dimensional inspection and material verification are carried out against the requirement."],
+  ["08","Documentation","Quality and traceability documentation is compiled for release."],
+  ["09","Packing and delivery","Components are packed for international transport and shipped to the agreed location."]
+];
+
+const QUALITY_PATH = [
+  ["01","Requirement review","The customer requirement, drawings and any customer-specific quality requirements are reviewed and recorded."],
+  ["02","Supplier qualification","Manufacturing sources are qualified against the component category and the requirement."],
+  ["03","Manufacturing control","Production is controlled through defined stages with inspection points agreed in advance."],
+  ["04","Inspection","Dimensional inspection and material verification are carried out against the approved definition."],
+  ["05","Documentation","Inspection records and traceability documentation are compiled."],
+  ["06","Final release","The component is released against the requirement, packed and prepared for shipment."]
+];
+
+const NAV = [["Home","#/"],["About","#/about"],["Products","#/products"],["Turbine Platforms","#/turbine-platforms"],["Services","#/services"],["Quality","#/quality"],["Contact","#/contact"]];
+
+const CMS = { testimonials:[], logos:[], showLogos:false, businessHours:null, linkedin:null, isoCertificate:null };
+
+/* Draft store — in production this is localStorage; kept in-memory here. */
+const DRAFT = { data:null, save(d){this.data=JSON.parse(JSON.stringify(d))}, load(){return this.data} };
+
+const q = s => document.querySelector(s);
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const cat = s => CATEGORIES.find(c=>c.slug===s);
+const plat = s => PLATFORMS.find(p=>p.slug===s);
+const zone = s => ZONES.find(z=>z.slug===s);
+
+/* ============================================================
+   SVG PRIMITIVES
+   ============================================================ */
+function heroRotor(){
+  let blades="";
+  for(let i=0;i<28;i++){
+    const a=i*(360/28);
+    blades+=`<path d="M200 200 L200 96 q5 -14 10 0 L212 200 Z" fill="#16202C" stroke="#243140" stroke-width=".8" transform="rotate(${a} 200 200)"/>`;
+  }
+  let inner="";
+  for(let i=0;i<20;i++){
+    const a=i*18;
+    inner+=`<path d="M200 200 L200 132 q4 -10 8 0 L210 200 Z" fill="#0F1620" stroke="#2FC6E0" stroke-opacity=".28" stroke-width=".7" transform="rotate(${a} 200 200)"/>`;
+  }
+  return `
+  <svg viewBox="0 0 400 400" role="img" aria-label="Technical illustration of a gas turbine rotor with engineering callouts" style="width:100%;height:auto">
+    <defs>
+      <radialGradient id="hub" cx="50%" cy="50%"><stop offset="0" stop-color="#243140"/><stop offset="1" stop-color="#0A1119"/></radialGradient>
+    </defs>
+    <circle cx="200" cy="200" r="150" fill="none" stroke="#243140" stroke-width="1" stroke-dasharray="2 6"/>
+    <circle cx="200" cy="200" r="176" fill="none" stroke="#1A7C8E" stroke-opacity=".35" stroke-width="1"/>
+    <g class="rotor">
+      ${blades}${inner}
+      <circle cx="200" cy="200" r="34" fill="url(#hub)" stroke="#2FC6E0" stroke-opacity=".5"/>
+      <circle cx="200" cy="200" r="12" fill="#0A1119" stroke="#243140"/>
+    </g>
+    <g class="callout">
+      <g class="fade-in" style="animation-delay:.7s">
+        <line class="draw" x1="248" y1="132" x2="330" y2="86" style="animation-delay:.7s"/>
+        <circle cx="248" cy="132" r="2.5" fill="#2FC6E0" stroke="none"/>
+        <text x="336" y="84">Stage 1 aerofoil</text>
+        <text x="336" y="96" fill="#2FC6E0">Rotating</text>
+      </g>
+      <g class="fade-in" style="animation-delay:1s">
+        <line class="draw" x1="200" y1="234" x2="86" y2="304" style="animation-delay:1s"/>
+        <circle cx="200" cy="234" r="2.5" fill="#2FC6E0" stroke="none"/>
+        <text x="20" y="318">Rotor hub assembly</text>
+      </g>
+      <g class="fade-in" style="animation-delay:1.3s">
+        <line class="draw" x1="118" y1="146" x2="44" y2="104" style="animation-delay:1.3s"/>
+        <circle cx="118" cy="146" r="2.5" fill="#2FC6E0" stroke="none"/>
+        <text x="12" y="98">Blade root fixing</text>
+      </g>
+      <g class="fade-in" style="animation-delay:1.6s">
+        <line class="draw" x1="322" y1="248" x2="368" y2="292" style="animation-delay:1.6s"/>
+        <circle cx="322" cy="248" r="2.5" fill="#2FC6E0" stroke="none"/>
+        <text x="290" y="308">Casing interface</text>
+      </g>
+    </g>
+  </svg>`;
+}
+
+/* Product card artwork — abstract engineered geometry per category */
+function partArt(slug){
+  const base='stroke="#2A3744" fill="#131C27"';
+  const art={
+    "compressor-rotor-blades":`<path class="outline" d="M150 40 C110 90 96 150 106 210 L150 236 L194 210 C204 150 190 90 150 40 Z"/><path ${base} d="M150 46 C114 94 102 152 111 206 L150 228 L189 206 C198 152 186 94 150 46 Z"/><rect ${base} x="120" y="232" width="60" height="26" rx="1"/><path stroke="#1A7C8E" fill="none" d="M150 60 V222"/>`,
+    "compressor-stator-blades":`<path class="outline" d="M104 46 C142 92 152 154 140 226 L184 236 C198 158 186 92 148 40 Z"/><path ${base} d="M108 52 C144 96 154 154 143 220 L178 228 C192 156 180 94 146 48 Z"/><rect ${base} x="92" y="36" width="66" height="16" rx="1"/><rect ${base} x="136" y="228" width="60" height="18" rx="1"/>`,
+    "shrouds":`<path class="outline" d="M70 110 H230 L214 190 H86 Z"/><path ${base} d="M76 116 H224 L210 184 H90 Z"/><path ${base} d="M96 116 V184 M126 116 V184 M156 116 V184 M186 116 V184" fill="none"/>`,
+    "inlet-guide-vanes":`<circle class="outline" cx="150" cy="150" r="98"/><circle ${base} cx="150" cy="150" r="92"/><g stroke="#2A3744" fill="#0F1620">${Array.from({length:12},(_,i)=>`<path d="M150 78 q10 34 0 68 q-10 -34 0 -68" transform="rotate(${i*30} 150 150)"/>`).join("")}</g><circle ${base} cx="150" cy="150" r="24"/>`,
+    "fuel-nozzles":`<path class="outline" d="M118 44 H182 L190 150 L166 250 H134 L110 150 Z"/><path ${base} d="M122 50 H178 L186 150 L163 244 H137 L114 150 Z"/><rect ${base} x="104" y="86" width="92" height="20" rx="1"/><circle ${base} cx="150" cy="248" r="9"/><path stroke="#E2622A" stroke-opacity=".55" fill="none" d="M150 256 v26"/>`,
+    "crossfire-tubes":`<path class="outline" d="M50 130 H250 V172 H50 Z"/><rect ${base} x="56" y="136" width="188" height="30" rx="2"/><rect ${base} x="44" y="122" width="26" height="58" rx="1"/><rect ${base} x="230" y="122" width="26" height="58" rx="1"/><path stroke="#E2622A" stroke-opacity=".4" fill="none" d="M76 151 H224"/>`,
+    "flow-sleeves":`<rect class="outline" x="62" y="96" width="176" height="108" rx="4"/><rect ${base} x="68" y="102" width="164" height="96" rx="3"/><g stroke="#1A7C8E" fill="none">${Array.from({length:7},(_,i)=>`<circle cx="${86+i*22}" cy="150" r="6"/>`).join("")}</g>`,
+    "nozzle-support-rings":`<circle class="outline" cx="150" cy="150" r="104"/><circle ${base} cx="150" cy="150" r="98"/><circle ${base} cx="150" cy="150" r="66"/><g stroke="#2A3744" fill="#0A1119">${Array.from({length:16},(_,i)=>`<circle cx="${150+82*Math.cos(i*Math.PI/8)}" cy="${150+82*Math.sin(i*Math.PI/8)}" r="4"/>`).join("")}</g>`,
+    "casings":`<path class="outline" d="M40 190 A110 110 0 0 1 260 190 Z"/><path ${base} d="M48 186 A102 102 0 0 1 252 186 Z"/><rect ${base} x="34" y="186" width="232" height="22" rx="1"/><g stroke="#2A3744" fill="#0A1119">${Array.from({length:9},(_,i)=>`<circle cx="${52+i*24}" cy="197" r="4"/>`).join("")}</g>`,
+    "bearings":`<circle class="outline" cx="150" cy="150" r="98"/><circle ${base} cx="150" cy="150" r="92"/><circle ${base} cx="150" cy="150" r="46"/><g stroke="#2A3744" fill="#16202C">${Array.from({length:10},(_,i)=>`<circle cx="${150+68*Math.cos(i*Math.PI/5)}" cy="${150+68*Math.sin(i*Math.PI/5)}" r="12"/>`).join("")}</g>`,
+    "bolting-and-fasteners":`<path class="outline" d="M118 44 L182 44 L196 74 L182 104 L118 104 L104 74 Z"/><path ${base} d="M120 50 L180 50 L192 74 L180 98 L120 98 L108 74 Z"/><rect ${base} x="136" y="104" width="28" height="146" rx="1"/><g stroke="#1A7C8E" fill="none">${Array.from({length:12},(_,i)=>`<path d="M136 ${118+i*11} H164"/>`).join("")}</g>`,
+    "custom-engineered-components":`<path class="outline" d="M76 220 L110 80 L190 80 L224 220 Z"/><path ${base} d="M84 214 L116 88 L184 88 L216 214 Z"/><path stroke="#2FC6E0" stroke-opacity=".4" fill="none" stroke-dasharray="4 4" d="M150 60 V240 M60 150 H240"/><circle ${base} cx="150" cy="150" r="22"/>`
+  };
+  return `<svg viewBox="0 0 300 300" aria-hidden="true" stroke-linejoin="round">${art[slug]||art["custom-engineered-components"]}</svg>`;
+}
+
+/* Turbine cross-section for the explorer */
+function turbineSVG(){
+  const z=(s,shape,lx,ly,label)=>{
+    const Z=zone(s);
+    return `<g class="zone ${Z.hot?'hot':''}" data-zone="${s}" tabindex="0" role="button" aria-label="${esc(Z.label)}">
+      ${shape}
+      <text class="zlabel" x="${lx}" y="${ly}">${esc(label)}</text>
+    </g>`;
+  };
+  return `
+  <svg viewBox="0 0 900 420" role="img" aria-label="Interactive gas turbine cross-section. Select a section to view component categories." style="width:100%;height:auto">
+    <rect x="0" y="0" width="900" height="420" fill="transparent"/>
+    <path d="M60 210 H840" stroke="#1A7C8E" stroke-dasharray="10 6 2 6" stroke-width="1" opacity=".8"/>
+    <text class="zlabel" x="60" y="200" style="fill:#1A7C8E">℄ Rotor axis</text>
+
+    ${z("compressor-section",`<path class="shape" d="M110 118 L360 152 L360 268 L110 302 Z"/>${Array.from({length:9},(_,i)=>`<path class="shape" d="M${130+i*25} ${124+i*3.4} L${138+i*25} ${124+i*3.4} L${138+i*25} ${296-i*3.4} L${130+i*25} ${296-i*3.4} Z"/>`).join("")}`,118,110,"Compressor section")}
+
+    ${z("combustion-section",`<path class="shape" d="M368 148 L520 138 L560 172 L560 248 L520 282 L368 272 Z"/><path class="shape" d="M400 168 L516 160 L534 180 L534 240 L516 260 L400 252 Z"/>`,372,130,"Combustion section")}
+
+    ${z("turbine-section",`<path class="shape" d="M568 168 L790 118 L790 302 L568 252 Z"/>${Array.from({length:5},(_,i)=>`<path class="shape" d="M${590+i*40} ${172+i*-9} L${600+i*40} ${170+i*-9} L${600+i*40} ${250+i*9} L${590+i*40} ${248+i*9} Z"/>`).join("")}`,700,110,"Turbine section")}
+
+    ${z("rotor-assembly",`<rect class="shape" x="120" y="200" width="700" height="20" rx="2"/>`,430,196,"Rotor assembly")}
+
+    ${z("stator-assembly",`${Array.from({length:8},(_,i)=>`<path class="shape" d="M${142+i*25} ${132+i*3.4} L${150+i*25} ${132+i*3.4} L${150+i*25} ${196} L${142+i*25} ${196} Z"/>`).join("")}`,150,332,"Stator assembly")}
+
+    ${z("fuel-system",`<rect class="shape" x="436" y="70" width="70" height="56" rx="2"/><path class="shape" d="M462 126 L462 158 M486 126 L486 158" stroke-width="3"/>`,436,62,"Fuel system")}
+
+    ${z("bearings-and-fasteners",`<rect class="shape" x="82" y="188" width="40" height="44" rx="2"/><rect class="shape" x="818" y="188" width="40" height="44" rx="2"/>`,806,180,"Bearings")}
+
+    ${z("casings-and-support",`<path class="shape" d="M100 104 L840 104 L840 122 L100 122 Z"/><path class="shape" d="M100 298 L840 298 L840 316 L100 316 Z"/><path class="shape" d="M240 316 L268 366 L212 366 Z"/><path class="shape" d="M660 316 L688 366 L632 366 Z"/>`,100,96,"Casings & support")}
+
+    <g opacity=".5">
+      <path d="M110 384 H360" stroke="#243140"/><path d="M110 380 V388 M360 380 V388" stroke="#243140"/>
+      <text class="zlabel" x="200" y="378" style="fill:#8695A6">Air path</text>
+      <path d="M568 384 H790" stroke="#243140"/><path d="M568 380 V388 M790 380 V388" stroke="#243140"/>
+      <text class="zlabel" x="640" y="378" style="fill:#8695A6">Gas path</text>
+    </g>
+  </svg>`;
+}
+
+function worldSVG(){
+  const arcs=[[400,190,150,120],[400,190,700,150],[400,190,620,300],[400,190,180,260],[400,190,760,220],[400,190,300,110]];
+  const dubai=[400,190];
+  return `<svg viewBox="0 0 800 380" role="img" aria-label="Map showing an international supply network radiating from Dubai" style="width:100%;height:auto">
+    <g class="land">
+      <path d="M60 120 q60 -40 130 -20 q60 18 90 4 q40 -18 70 8 q-10 40 -60 60 q-40 16 -80 6 q-60 -14 -100 -18 q-40 -4 -50 -40 Z"/>
+      <path d="M150 200 q50 -8 70 30 q20 50 -10 90 q-30 40 -50 10 q-20 -40 -20 -80 q0 -40 10 -50 Z"/>
+      <path d="M330 130 q40 -30 90 -16 q40 12 60 -6 q40 -30 90 -4 q40 22 20 60 q-24 44 -80 40 q-60 -4 -100 6 q-50 12 -70 -20 q-20 -32 -10 -60 Z"/>
+      <path d="M360 210 q40 -10 70 20 q30 30 20 70 q-10 40 -50 50 q-40 10 -50 -40 q-10 -50 10 -100 Z"/>
+      <path d="M560 120 q60 -30 120 -10 q60 20 90 0 q30 -20 20 30 q-10 50 -80 60 q-70 10 -110 -10 q-40 -20 -40 -70 Z"/>
+      <path d="M640 250 q50 -20 90 10 q40 30 10 60 q-30 30 -70 10 q-40 -20 -30 -80 Z"/>
+    </g>
+    ${arcs.map(([x1,y1,x2,y2])=>{
+      const mx=(x1+x2)/2, my=Math.min(y1,y2)-70;
+      return `<path class="arc" d="M${x1} ${y1} Q${mx} ${my} ${x2} ${y2}"/><circle class="dot" cx="${x2}" cy="${y2}" r="2.5"/>`;
+    }).join("")}
+    <circle class="pulse" cx="${dubai[0]}" cy="${dubai[1]}" r="4"/>
+    <circle class="hub" cx="${dubai[0]}" cy="${dubai[1]}" r="4.5"/>
+    <text x="${dubai[0]+12}" y="${dubai[1]+4}" style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;fill:#E2622A">DUBAI · JLT</text>
+  </svg>`;
+}
+
+/* ============================================================
+   SHARED BLOCKS
+   ============================================================ */
+const secHead=(eyebrow,title,sub="")=>`
+  <div class="sec-head rv"><span class="eyebrow">${esc(eyebrow)}</span><h2>${esc(title)}</h2>${sub?`<p>${esc(sub)}</p>`:""}</div>`;
+
+const crumbs=arr=>`<nav class="crumbs" aria-label="Breadcrumb">${arr.map((a,i)=>
+  i===arr.length-1?`<span style="color:var(--steel-light)">${esc(a[0])}</span>`:`<a href="${a[1]}">${esc(a[0])}</a> <span>/</span> `).join("")}</nav>`;
+
+function productCard(c){
+  const ps=c.platforms.map(s=>plat(s)?.name).filter(Boolean).slice(0,4);
+  return `<article class="card pcard rv">
+    <div class="pcard-img">${partArt(c.slug)}</div>
+    <div class="pcard-body">
+      <h3>${esc(c.name)}</h3>
+      <p>${esc(c.one)}</p>
+      <div class="chips">${ps.map(p=>`<span class="chip">${esc(p)}</span>`).join("")}${c.platforms.length>4?`<span class="chip">+${c.platforms.length-4}</span>`:""}</div>
+    </div>
+    <div class="pcard-foot">
+      <a class="link-c" href="#/products/${c.slug}">View details →</a>
+      <a class="btn btn--ghost btn--sm" href="#/request-a-quote?category=${c.slug}">Add to RFQ</a>
+    </div>
+  </article>`;
+}
+
+function flowBlock(items){
+  return `<div class="flow rv"><div class="flow-line" data-flowline></div>
+    ${items.map(([n,t,d])=>`<div class="step"><span class="mono">${n} · ${esc(t)}</span><p>${esc(d)}</p></div>`).join("")}
+  </div>`;
+}
+
+const ctaBand=()=>`
+<section class="band">
+  <div class="wrap section band-in" style="padding-block:64px">
+    <div>
+      <span class="eyebrow">Request a quote</span>
+      <h2>Send us the part requirement.<br>We'll come back with a route to supply.</h2>
+      <p style="margin-top:14px">Attach a drawing, a datasheet or a photograph of the existing component. Every enquiry is reviewed by an engineer before quotation.</p>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="#/request-a-quote">Request a Quote</a>
+      <a class="btn btn--ghost" href="mailto:sales@etinternational.ae">Email sales</a>
+    </div>
+  </div>
+</section>`;
+
+function footer(){
+  return `<div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <span class="logo" style="margin-bottom:16px"><span style="font-family:var(--font-display);font-weight:800;font-size:19px">ET<b style="color:var(--cyan)">·</b>International</span><span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;color:var(--steel-light)">DMCC</span></span>
+        <p style="font-size:14px;margin-top:14px">ET International DMCC supplies OEM-equivalent spare parts and engineered component solutions for heavy-duty gas and steam turbines.</p>
+        <p class="mono" style="color:var(--cyan);margin-top:18px">ISO 9001:2015 Certified</p>
+      </div>
+      <div><h4>Products</h4><ul>${CATEGORIES.slice(0,6).map(c=>`<li><a href="#/products/${c.slug}">${esc(c.name)}</a></li>`).join("")}<li><a href="#/products" class="link-c">All products →</a></li></ul></div>
+      <div><h4>Platforms</h4><ul>${PLATFORMS.map(p=>`<li><a href="#/turbine-platforms/${p.slug}">${esc(p.name)}</a></li>`).join("")}</ul></div>
+      <div><h4>Company</h4><ul>
+        <li><a href="#/about">About us</a></li><li><a href="#/services">Services</a></li>
+        <li><a href="#/quality">Quality &amp; certification</a></li><li><a href="#/industries">Industries</a></li>
+        <li><a href="#/contact">Contact</a></li><li><a href="#/privacy">Privacy policy</a></li></ul></div>
+      <div>
+        <h4>Quick enquiry</h4>
+        <form id="quickForm" novalidate style="display:grid;gap:10px">
+          <input class="field" name="name" placeholder="Name" required>
+          <input class="field" name="email" type="email" placeholder="Work email" required>
+          <textarea class="field" name="message" rows="3" placeholder="What do you need?" required></textarea>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+          <button class="btn btn--sm" type="submit">Send enquiry</button>
+        </form>
+        <div style="margin-top:20px;display:grid;gap:6px">
+          <a class="mono dim" href="mailto:sales@etinternational.ae">sales@etinternational.ae</a>
+          <a class="mono dim" href="tel:+97145897122">+971 4 589 7122</a>
+          <span class="mono dim">Fax +971 4 587 7402</span>
+        </div>
+      </div>
+    </div>
+    <p class="disclaimer">GE and turbine frame designations referenced on this website are used descriptively to identify the machines for which components are supplied. ET International DMCC is not affiliated with, authorised by, or endorsed by any original equipment manufacturer. All trademarks remain the property of their respective owners. <em style="color:var(--cyan-dim)">[Disclaimer wording requires client legal confirmation.]</em></p>
+    <div class="ftr-bot">
+      <span class="mono dim">© ${new Date().getFullYear()} ET International DMCC · Cluster O, Jumeirah Lakes Towers, Dubai, UAE</span>
+      <span class="mono dim"><a href="#/privacy">Privacy policy</a> · <a href="#/request-a-quote">Request a quote</a></span>
+    </div>
+  </div>
+  <svg class="ftr-line" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 90 Q150 40 300 90 T600 90 T900 90 T1200 90" fill="none" stroke="#2FC6E0" stroke-width="1"/>
+    <path d="M0 104 Q150 54 300 104 T600 104 T900 104 T1200 104" fill="none" stroke="#1A7C8E" stroke-width="1"/>
+  </svg>`;
+}
+
+/* ============================================================
+   PAGES
+   ============================================================ */
+const pages = {};
+
+pages.home = () => `
+<section class="hero">
+  <div class="hero-bg"></div><div class="hero-grid"></div>
+  <div class="wrap hero-in">
+    <div>
+      <span class="eyebrow fade-in">ET International DMCC · Dubai, UAE</span>
+      <h1 class="display-xl fade-in" style="animation-delay:.1s">Engineered components.<br>Reliable performance.<br><em>Global support.</em></h1>
+      <p class="body-l fade-in" style="animation-delay:.25s">ET International DMCC supplies OEM-equivalent spare parts and technical solutions for heavy-duty gas and steam turbines, engineered to demanding international standards.</p>
+      <div class="hero-cta fade-in" style="animation-delay:.4s">
+        <a class="btn" href="#/request-a-quote">Request a Quote</a>
+        <a class="btn btn--ghost" href="#/products">Explore Our Products</a>
+      </div>
+      <p class="trust-line fade-in" style="animation-delay:.55s">ISO 9001:2015 Certified &nbsp;|&nbsp; International Supply Network &nbsp;|&nbsp; Gas &amp; Steam Turbine Expertise</p>
+    </div>
+    <div class="hero-art">${heroRotor()}</div>
+  </div>
+  <div class="scroll-ind"><span class="mono">Scroll to explore</span><i></i></div>
+</section>
+
+<section class="trust">
+  <div class="wrap" style="padding-inline:0">
+    <div class="trust-in">
+      ${["ISO 9001:2015 Certified","OEM-Equivalent Components","International Vendor Network","Competitive Lead Times","Technical &amp; Engineering Support"]
+        .map((t,i)=>`<div class="trust-item rv" style="transition-delay:${i*60}ms"><span class="tick"></span><span class="mono">${t}</span></div>`).join("")}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grid cols-2" style="align-items:start;gap:56px">
+    <div class="rv">
+      <span class="eyebrow">Company introduction</span>
+      <h2>A supply partner that reads the drawing before it quotes the part.</h2>
+    </div>
+    <div class="rv">
+      <p class="body-l">ET International DMCC supplies OEM-equivalent spare parts and engineered component solutions for heavy-duty gas and steam turbines. Components are supplied against approved drawings and customer requirements, through an international manufacturing and vendor network.</p>
+      <p style="margin-top:18px">Where drawings are unavailable or a component is obsolete, the part is engineered from first principles — measured from a supplied sample, modelled, planned for material and manufacture, inspected, documented and shipped.</p>
+      <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn--ghost btn--sm" href="#/about">About ET International</a>
+        <a class="btn btn--ghost btn--sm" href="#/services">Services &amp; capabilities</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--line" id="explorer">
+  <div class="wrap">
+    ${secHead("Turbine explorer","Select a platform. Select a section. See what we supply.","Component categories mapped to the machine. Choose a section of the turbine to view what is supplied there and send the requirement straight into an RFQ.")}
+    <div id="explorerRoot"></div>
+  </div>
+</section>
+
+<section class="section section--line">
+  <div class="wrap">
+    ${secHead("Product categories","Twelve component categories across gas and steam turbine platforms.")}
+    <div class="grid cols-3">${CATEGORIES.slice(0,6).map(productCard).join("")}</div>
+    <div style="margin-top:32px"><a class="btn btn--ghost" href="#/products">View all 12 categories</a></div>
+  </div>
+</section>
+
+<section class="section section--line">
+  <div class="wrap grid cols-2" style="gap:56px;align-items:start">
+    <div class="rv" style="position:sticky;top:110px">
+      <span class="eyebrow">Engineering &amp; supply process</span>
+      <h2>From requirement to delivery, in nine controlled stages.</h2>
+      <p style="margin-top:16px">Every stage produces a record. That record is what makes repeat supply, inspection and traceability possible.</p>
+      <a class="btn btn--ghost btn--sm" href="#/about" style="margin-top:24px">See the full approach</a>
+    </div>
+    ${flowBlock(PROCESS)}
+  </div>
+</section>
+
+<section class="section section--line">
+  <div class="wrap">
+    ${secHead("Services &amp; capabilities","Engineering support around the component, not just the box.")}
+    <div class="grid cols-3">
+      ${SERVICES.slice(0,6).map(s=>`<a class="card rv" href="#/services/${s.slug}">
+        <span class="mono" style="color:var(--cyan)">Service</span>
+        <h3 style="margin:12px 0 10px">${esc(s.name)}</h3>
+        <p style="font-size:14px">${esc(s.desc)}</p>
+      </a>`).join("")}
+    </div>
+    <div style="margin-top:32px"><a class="btn btn--ghost" href="#/services">All capabilities</a></div>
+  </div>
+</section>
+
+<section class="section section--line">
+  <div class="wrap grid cols-2" style="gap:56px;align-items:start">
+    <div class="rv">
+      <span class="eyebrow">Quality assurance</span>
+      <h2>ISO 9001:2015 certified, with traceability from material to delivery.</h2>
+      <p style="margin-top:16px">Quality is managed as a pathway, not a final check. Supplier qualification, stage control, inspection and documentation are agreed before manufacture begins.</p>
+      <a class="btn btn--ghost btn--sm" href="#/quality" style="margin-top:24px">Quality &amp; certification</a>
+      <div class="note" style="margin-top:24px">ISO certificate PDF to be uploaded and verified before it is displayed publicly.</div>
+    </div>
+    ${flowBlock(QUALITY_PATH)}
+  </div>
+</section>
+
+<section class="section section--line">
+  <div class="wrap">
+    ${secHead("Industries we support","Where these components go.")}
+    <div class="grid cols-4">
+      ${INDUSTRIES.map(i=>`<div class="card rv"><h3 style="font-size:16px">${esc(i.n)}</h3><p style="font-size:13px;margin-top:8px">${esc(i.d)}</p></div>`).join("")}
+    </div>
+  </div>
+</section>
+
+<section class="section section--line">
+  <div class="wrap">
+    ${secHead("Global supply network","Supporting turbine-component requirements through an established international manufacturing and vendor network.")}
+    <div class="map-wrap rv">${worldSVG()}</div>
+    <p class="caption" style="margin-top:14px">Illustrative of general international supply capability. No customer sites, facilities or offices are represented.</p>
+  </div>
+</section>
+
+${CMS.showLogos && CMS.logos.length ? `<section class="section section--line"><div class="wrap"><!-- logo carousel renders here --></div></section>` : `<!-- Logo carousel hidden: no approved logos in CMS -->`}
+${CMS.testimonials.length ? `<section class="section section--line"><div class="wrap"><!-- testimonials render here --></div></section>` : `<!-- Testimonials hidden: no approved testimonials in CMS -->`}
+
+${ctaBand()}`;
+
+pages.about = () => `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["About us"]])}
+  <h1 class="display-l">Engineering quality, dependable supply, cost-effective turbine solutions.</h1>
+  <p class="body-l" style="margin-top:20px">ET International DMCC provides OEM-equivalent spare parts and technical solutions for heavy-duty gas and steam turbines from Dubai, UAE.</p>
+</div></section>
+
+<section class="section"><div class="wrap grid cols-2" style="gap:56px;align-items:start">
+  <div class="rv"><span class="eyebrow">Company overview</span><h2>What we do, stated plainly.</h2></div>
+  <div class="rv">
+    <p class="body-l">We supply components for heavy-duty gas and steam turbines against approved drawings and customer requirements. Where a component is obsolete or drawings are unavailable, we engineer it from a supplied sample or dimensional data.</p>
+    <p style="margin-top:16px">Our focus is on engineering quality, customer requirements, dependable supply and cost-effective turbine solutions — supported by an international manufacturing and vendor network and an ISO 9001:2015 certified quality management system.</p>
+    <div class="note" style="margin-top:22px">Company founding date, years of operation and project counts are not published. These require client confirmation before any figure appears on this site.</div>
+  </div>
+</div></section>
+
+<section class="section section--line"><div class="wrap">
+  ${secHead("What defines us","Seven things a buyer can hold us to.")}
+  <div class="grid cols-3">
+    ${[["Certified quality standards","An ISO 9001:2015 certified quality management system governs how requirements are reviewed, controlled and released."],
+       ["Technical knowledge","Every enquiry is reviewed against the application before a price is quoted."],
+       ["Global manufacturing and vendor network","Manufacturing sources are qualified against the component category and the requirement."],
+       ["Customer-focused supply","Component supply is matched to the machine configuration and the outage schedule."],
+       ["Competitive lead times","Lead time is confirmed at quotation against manufacturing capacity at the time of enquiry."],
+       ["Long-term purchase support","Selected part numbers can be stocked against an agreed long-term purchase agreement."],
+       ["Engineering from first principles","Where no drawing exists, the component is measured, modelled and defined for manufacture."]]
+      .map(([t,d])=>`<div class="card rv"><h3>${esc(t)}</h3><p style="font-size:14px;margin-top:10px">${esc(d)}</p></div>`).join("")}
+  </div>
+</div></section>
+
+<section class="section section--line"><div class="wrap grid cols-2" style="gap:56px;align-items:start">
+  <div class="rv">
+    <span class="eyebrow">Long-term purchase agreements</span>
+    <h2>Availability planned against your outage schedule, not our stock list.</h2>
+    <p style="margin-top:16px">ET International can support customers through long-term purchase agreements and stock selected part numbers according to agreed requirements. Scope, part numbers and holding levels are defined with the customer at the point of agreement.</p>
+    <a class="btn btn--ghost btn--sm" href="#/request-a-quote" style="margin-top:24px">Discuss an agreement</a>
+  </div>
+  <div class="rv">
+    <div class="map-wrap">${worldSVG()}</div>
+  </div>
+</div></section>
+
+<section class="section section--line"><div class="wrap grid cols-2" style="gap:56px;align-items:start">
+  <div class="rv" style="position:sticky;top:110px">
+    <span class="eyebrow">Engineering approach</span>
+    <h2>Nine stages. Each one leaves a record.</h2>
+    <p style="margin-top:16px">This is the workflow behind every component we supply — including components that have no drawing when they arrive with us.</p>
+  </div>
+  ${flowBlock(PROCESS)}
+</div></section>
+
+${ctaBand()}`;
+
+pages.products = (params) => {
+  const state = { q:params.get("q")||"", category:params.get("category")||"", platform:params.get("platform")||"", zone:params.get("zone")||"", service:params.get("service")||"" };
+  const services=[...new Set(SERVICES.map(s=>s.name))];
+  return `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["Products"]])}
+  <h1 class="display-l">Products</h1>
+  <p class="body-l" style="margin-top:20px">Twelve component categories for heavy-duty gas and steam turbines. Filter by platform or by section of the machine, or search a component by name.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="filters">
+    <input class="field" id="fq" placeholder="Search components…" value="${esc(state.q)}" aria-label="Search components">
+    <select class="field" id="fcat" aria-label="Product category"><option value="">All categories</option>${CATEGORIES.map(c=>`<option value="${c.slug}" ${state.category===c.slug?"selected":""}>${esc(c.name)}</option>`).join("")}</select>
+    <select class="field" id="fplat" aria-label="Turbine platform"><option value="">All platforms</option>${PLATFORMS.map(p=>`<option value="${p.slug}" ${state.platform===p.slug?"selected":""}>${esc(p.name)}</option>`).join("")}</select>
+    <select class="field" id="fzone" aria-label="Component section"><option value="">All sections</option>${ZONES.map(z=>`<option value="${z.slug}" ${state.zone===z.slug?"selected":""}>${esc(z.label)}</option>`).join("")}</select>
+    <select class="field" id="fserv" aria-label="Service type"><option value="">All services</option>${services.map(s=>`<option value="${esc(s)}" ${state.service===s?"selected":""}>${esc(s)}</option>`).join("")}</select>
+  </div>
+  <p class="mono dim" id="pcount" style="margin-bottom:20px"></p>
+  <div class="grid cols-3" id="pgrid"></div>
+</div></section>
+${ctaBand()}`;
+};
+
+pages.productDetail = (slug) => {
+  const c = cat(slug); if(!c) return pages.notFound();
+  const Z = zone(c.zone);
+  const related = CATEGORIES.filter(x=>x.slug!==c.slug && (x.zone===c.zone || x.services.some(s=>c.services.includes(s)))).slice(0,3);
+  return `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["Products","#/products"],[c.name]])}
+  <div class="grid cols-2" style="gap:48px;align-items:center">
+    <div>
+      <h1 class="display-l">${esc(c.name)}</h1>
+      <p class="body-l" style="margin-top:18px">${esc(c.one)}</p>
+      <div class="chips" style="margin-top:20px">${c.platforms.map(p=>`<a class="chip" href="#/turbine-platforms/${p}">${esc(plat(p).name)}</a>`).join("")}</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+        <a class="btn" href="#/request-a-quote?category=${c.slug}${Z?`&zone=${Z.slug}`:""}">Request a Quote</a>
+        <button class="btn btn--ghost" data-spec-sheet>Download specification sheet</button>
+      </div>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden;background:linear-gradient(140deg,#131C27,#0A1119)">${partArt(c.slug)}</div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap grid cols-2" style="gap:56px;align-items:start">
+  <div class="rv">
+    <span class="eyebrow">Overview</span>
+    <p class="body-l">${esc(c.overview)}</p>
+    <h3 style="margin:32px 0 14px">Key applications</h3>
+    <ul style="display:grid;gap:10px;list-style:none">${c.apps.map(a=>`<li style="display:flex;gap:10px;align-items:flex-start"><span class="tick" style="margin-top:6px"></span><span style="font-size:14px;color:#C7D2DD">${esc(a)}</span></li>`).join("")}</ul>
+    <h3 style="margin:32px 0 14px">Engineering &amp; inspection</h3>
+    <p style="font-size:14px">${Z?esc(Z.support):"Engineering support confirmed at technical review."}</p>
+    <h3 style="margin:32px 0 14px">Quality control</h3>
+    <p style="font-size:14px">Manufactured under an ISO 9001:2015 certified quality management system. Inspection scope, material verification and documentation requirements are agreed before manufacture and recorded at release.</p>
+  </div>
+  <div class="rv">
+    <span class="eyebrow">Specification</span>
+    <table class="spec">
+      <tr><th>Material</th><td class="ph">${REVIEW}</td></tr>
+      <tr><th>Applicable models</th><td class="ph">${CONFIRM}</td></tr>
+      <tr><th>Specifications</th><td>Manufactured according to approved drawings and customer requirements</td></tr>
+      <tr><th>Component section</th><td>${Z?esc(Z.label):"—"}</td></tr>
+      <tr><th>Supported platforms</th><td>${c.platforms.map(p=>esc(plat(p).name)).join(", ")}</td></tr>
+      <tr><th>Services available</th><td>${c.services.map(esc).join(", ")}</td></tr>
+    </table>
+    <div class="note" style="margin-top:16px">Italicised values are placeholders. Material grades, dimensional data and applicable model lists are not published until confirmed by the technical team.</div>
+    <div class="card" style="margin-top:24px">
+      <span class="eyebrow">Quick enquiry</span>
+      <p style="font-size:14px;margin-bottom:16px">One question about this component? Send it without completing the full RFQ.</p>
+      <form id="quickFormInline" novalidate style="display:grid;gap:10px">
+        <input class="field" name="name" placeholder="Name" required>
+        <input class="field" name="email" type="email" placeholder="Work email" required>
+        <textarea class="field" name="message" rows="3" placeholder="Your question about ${esc(c.name)}" required></textarea>
+        <button class="btn btn--sm" type="submit">Send enquiry</button>
+      </form>
+    </div>
+  </div>
+</div></section>
+
+<section class="section section--line"><div class="wrap">
+  ${secHead("Related products","Components commonly enquired alongside this category.")}
+  <div class="grid cols-3">${related.map(productCard).join("")}</div>
+</div></section>
+${ctaBand()}`;
+};
+
+pages.platforms = () => `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["Turbine platforms"]])}
+  <h1 class="display-l">Turbine platforms</h1>
+  <p class="body-l" style="margin-top:20px">Component supply across heavy-duty gas turbine frames, steam turbine sets and custom or reverse-engineered requirements.</p>
+</div></section>
+<section class="section"><div class="wrap grid cols-3">
+  ${PLATFORMS.map(p=>{
+    const n=CATEGORIES.filter(c=>c.platforms.includes(p.slug)).length;
+    return `<a class="card rv" href="#/turbine-platforms/${p.slug}">
+      <span class="mono" style="color:var(--cyan)">${p.type==="gas"?"Gas turbine":p.type==="steam"?"Steam turbine":"Engineered"}</span>
+      <h3 style="margin:12px 0 10px">${esc(p.name)}</h3>
+      <p style="font-size:14px">${esc(p.summary)}</p>
+      <p class="mono dim" style="margin-top:18px">${n} component categories →</p>
+    </a>`;}).join("")}
+</div></section>
+${ctaBand()}`;
+
+pages.platformDetail = (slug) => {
+  const p = plat(slug); if(!p) return pages.notFound();
+  const cats = CATEGORIES.filter(c=>c.platforms.includes(slug));
+  return `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["Turbine platforms","#/turbine-platforms"],[p.name]])}
+  <h1 class="display-l">${esc(p.name)}</h1>
+  <p class="body-l" style="margin-top:20px">${esc(p.summary)}</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+    <a class="btn" href="#/request-a-quote?platform=${p.slug}">Request a quote for ${esc(p.name)}</a>
+    <a class="btn btn--ghost" href="#/#explorer">Open the turbine explorer</a>
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  ${secHead("Component categories",`${cats.length} categories supplied for ${p.name}.`)}
+  <div class="grid cols-3">${cats.map(productCard).join("")}</div>
+  <div class="note" style="margin-top:32px">Applicable model lists and configuration-specific detail are confirmed at technical review. Nothing on this page constitutes an OEM authorisation or certification claim.</div>
+</div></section>
+${ctaBand()}`;
+};
+
+pages.services = () => `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["Services"]])}
+  <h1 class="display-l">Services &amp; capabilities</h1>
+  <p class="body-l" style="margin-top:20px">Engineering, manufacturing coordination and supply support around heavy-duty turbine components.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="grid cols-3">
+    ${SERVICES.map(s=>`<a class="card rv" href="#/services/${s.slug}">
+      <span class="mono" style="color:var(--cyan)">Capability</span>
+      <h3 style="margin:12px 0 10px">${esc(s.name)}</h3>
+      <p style="font-size:14px">${esc(s.desc)}</p>
+      <p class="link-c" style="margin-top:16px">View capability →</p>
+    </a>`).join("")}
+  </div>
+  <div class="note" style="margin-top:32px">Repair, overhaul, field service and installation are not offered and are not claimed anywhere on this site. If these capabilities exist, confirm them and they will be added.</div>
+</div></section>
+${ctaBand()}`;
+
+pages.serviceDetail = (slug) => {
+  const s = SERVICES.find(x=>x.slug===slug); if(!s) return pages.notFound();
+  return `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["Services","#/services"],[s.name]])}
+  <h1 class="display-l">${esc(s.name)}</h1>
+  <p class="body-l" style="margin-top:20px">${esc(s.desc)}</p>
+</div></section>
+<section class="section"><div class="wrap grid cols-2" style="gap:56px;align-items:start">
+  <div class="rv">
+    <span class="eyebrow">Benefits</span>
+    <ul style="display:grid;gap:14px;list-style:none;margin-top:8px">${s.benefits.map(b=>`<li style="display:flex;gap:12px;align-items:flex-start"><span class="tick" style="margin-top:6px"></span><span style="color:#C7D2DD">${esc(b)}</span></li>`).join("")}</ul>
+    <a class="btn" href="#/request-a-quote?service=${encodeURIComponent(s.name)}" style="margin-top:32px">Request consultation</a>
+  </div>
+  <div class="rv">
+    <span class="eyebrow">Related product categories</span>
+    <div style="display:grid;gap:12px;margin-top:8px">
+      ${s.cats.map(cs=>{const c=cat(cs);return c?`<a class="card" href="#/products/${c.slug}" style="padding:18px"><h3 style="font-size:16px">${esc(c.name)}</h3><p style="font-size:13px;margin-top:6px">${esc(c.one)}</p></a>`:""}).join("")}
+    </div>
+  </div>
+</div></section>
+${ctaBand()}`;
+};
+
+pages.quality = () => `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["Quality &amp; certification"]])}
+  <h1 class="display-l">Quality &amp; certification</h1>
+  <p class="body-l" style="margin-top:20px">An ISO 9001:2015 certified quality management system governs how requirements are reviewed, how manufacture is controlled and how components are released.</p>
+</div></section>
+
+<section class="section"><div class="wrap grid cols-2" style="gap:56px;align-items:start">
+  <div class="rv" style="position:sticky;top:110px">
+    <span class="eyebrow">Quality pathway</span>
+    <h2>Six stages, agreed before manufacture begins.</h2>
+    <p style="margin-top:16px">Inspection points and documentation requirements are defined at requirement review — not negotiated after the component is made.</p>
+  </div>
+  ${flowBlock(QUALITY_PATH)}
+</div></section>
+
+<section class="section section--line"><div class="wrap">
+  ${secHead("Quality management scope","What the system covers.")}
+  <div class="grid cols-3">
+    ${[["ISO 9001:2015 certification","Certified quality management system covering component supply and engineering support."],
+       ["Supplier qualification","Manufacturing sources qualified against the component category and requirement."],
+       ["Material verification","Material verified against the definition, with documentation issued where required."],
+       ["Dimensional inspection","Inspection against the approved drawing or the recorded reverse-engineered definition."],
+       ["Manufacturing-stage inspection","Inspection points held at agreed stages through production."],
+       ["Documentation control","Records compiled and retained against each supply."],
+       ["Final inspection","Component verified against the requirement before release."],
+       ["Packing and traceability","Components packed for international transport with traceability maintained to delivery."],
+       ["Customer-specific requirements","Additional inspection, certification or documentation requirements accommodated where agreed at enquiry."]]
+      .map(([t,d])=>`<div class="card rv"><h3 style="font-size:16px">${esc(t)}</h3><p style="font-size:13px;margin-top:8px">${esc(d)}</p></div>`).join("")}
+  </div>
+</div></section>
+
+<section class="section section--line"><div class="wrap">
+  ${secHead("Documents","Certificates and technical documentation.")}
+  <div class="card rv" style="text-align:center;padding:56px 28px">
+    <p class="mono dim">No documents published</p>
+    <p style="margin:14px auto 0">Certificates, quality policies, technical brochures and product catalogues appear here once uploaded and verified in the admin area. Nothing is displayed on the basis of a claim alone.</p>
+    <div class="chips" style="justify-content:center;margin-top:22px">
+      ${["ISO 9001:2015 certificate","Quality policy","Technical brochure","Product catalogue"].map(d=>`<span class="chip">${d} · awaiting upload</span>`).join("")}
+    </div>
+  </div>
+</div></section>
+${ctaBand()}`;
+
+pages.industries = () => `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["Industries"]])}
+  <h1 class="display-l">Industries we support</h1>
+  <p class="body-l" style="margin-top:20px">Organisations that operate, maintain, service or supply heavy-duty gas and steam turbine equipment.</p>
+</div></section>
+<section class="section"><div class="wrap grid cols-2">
+  ${INDUSTRIES.map(i=>`<div class="card rv" style="display:flex;gap:18px;align-items:flex-start">
+    <span class="tick" style="margin-top:6px"></span>
+    <div><h3>${esc(i.n)}</h3><p style="font-size:14px;margin-top:8px">${esc(i.d)}</p></div>
+  </div>`).join("")}
+</div>
+<div class="wrap"><div class="note" style="margin-top:32px">These are the sectors that require turbine components. No current customer relationship is implied by any entry on this page.</div></div>
+</section>
+${ctaBand()}`;
+
+pages.contact = () => `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["Contact"]])}
+  <h1 class="display-l">Contact</h1>
+  <p class="body-l" style="margin-top:20px">Send a requirement, ask a technical question, or request a quotation.</p>
+</div></section>
+<section class="section"><div class="wrap grid cols-2" style="gap:56px;align-items:start">
+  <div class="rv">
+    <div class="grid cols-2" style="gap:14px">
+      <div class="card"><span class="mono dim">Email</span><p style="margin:10px 0 14px;font-family:var(--font-mono);font-size:13px;color:var(--white)">sales@etinternational.ae</p><button class="copy" data-copy="sales@etinternational.ae">Copy email</button></div>
+      <div class="card"><span class="mono dim">Landline</span><p style="margin:10px 0 14px;font-family:var(--font-mono);font-size:13px;color:var(--white)">+971 4 589 7122</p><button class="copy" data-copy="+97145897122">Copy number</button></div>
+      <div class="card"><span class="mono dim">Fax</span><p style="margin:10px 0 0;font-family:var(--font-mono);font-size:13px;color:var(--white)">+971 4 587 7402</p></div>
+      <div class="card"><span class="mono dim">Office</span><p style="margin:10px 0 0;font-size:13px;color:var(--white)">Cluster O, Jumeirah Lakes Towers<br>Dubai, United Arab Emirates</p></div>
+      ${CMS.businessHours?`<div class="card"><span class="mono dim">Business hours</span><p>${esc(CMS.businessHours)}</p></div>`:`<div class="card" style="opacity:.6"><span class="mono dim">Business hours</span><p style="margin-top:10px;font-size:13px" class="ph">Set in admin — not yet provided</p></div>`}
+      ${CMS.linkedin?`<div class="card"><span class="mono dim">LinkedIn</span><a class="link-c" href="${esc(CMS.linkedin)}">View profile →</a></div>`:``}
+    </div>
+    <div class="map-wrap rv" style="margin-top:14px;padding:0;height:280px;position:relative">
+      <svg viewBox="0 0 600 280" style="width:100%;height:100%" role="img" aria-label="Map indicating Jumeirah Lakes Towers, Dubai">
+        <rect width="600" height="280" fill="#0C121B"/>
+        <g stroke="#1B2634" fill="none">
+          ${Array.from({length:12},(_,i)=>`<path d="M${i*54} 0 V280"/>`).join("")}
+          ${Array.from({length:6},(_,i)=>`<path d="M0 ${i*52} H600"/>`).join("")}
+        </g>
+        <path d="M0 170 Q160 120 330 158 T600 130" stroke="#1A7C8E" stroke-width="2" fill="none" opacity=".7"/>
+        <path d="M120 0 L200 280" stroke="#243140" stroke-width="6"/>
+        <path d="M0 210 H600" stroke="#243140" stroke-width="5"/>
+        <circle cx="310" cy="150" r="26" fill="none" stroke="#E2622A" opacity=".35"/>
+        <circle cx="310" cy="150" r="5" fill="#E2622A"/>
+        <text x="326" y="146" style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;fill:#F2F5F8">ET INTERNATIONAL DMCC</text>
+        <text x="326" y="160" style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;fill:#8695A6">CLUSTER O · JLT · DUBAI</text>
+      </svg>
+      <p class="caption" style="position:absolute;bottom:10px;left:14px">Interactive map embed to be connected on the live build. Exact unit number withheld pending confirmation.</p>
+    </div>
+  </div>
+  <div class="rv">
+    <div class="card">
+      <span class="eyebrow">General enquiry</span>
+      <h3 style="margin-bottom:18px">Send a message</h3>
+      <form id="contactForm" novalidate style="display:grid;gap:16px">
+        <div><label class="lbl" for="cn">Full name <span class="req">*</span></label><input class="field" id="cn" name="name" required></div>
+        <div><label class="lbl" for="cc">Company</label><input class="field" id="cc" name="company"></div>
+        <div><label class="lbl" for="ce">Work email <span class="req">*</span></label><input class="field" id="ce" name="email" type="email" required></div>
+        <div><label class="lbl" for="cm">Message <span class="req">*</span></label><textarea class="field" id="cm" name="message" rows="5" required></textarea></div>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <div class="check"><input type="checkbox" id="cconsent" required><label for="cconsent">I consent to ET International DMCC processing this enquiry in line with the <a class="link-c" href="#/privacy" style="font-size:13px">privacy policy</a>.</label></div>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </div>
+    <div class="card" style="margin-top:14px;text-align:center">
+      <p style="margin:0 auto 16px">Have an actual part requirement with drawings or quantities?</p>
+      <a class="btn btn--ghost" href="#/request-a-quote">Use the full RFQ form</a>
+    </div>
+  </div>
+</div></section>`;
+
+pages.privacy = () => `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["Privacy policy"]])}
+  <h1 class="display-l">Privacy policy</h1>
+  <p class="caption" style="margin-top:14px">Last updated: to be confirmed at launch.</p>
+</div></section>
+<section class="section"><div class="wrap" style="max-width:820px">
+  <div class="note" style="margin-bottom:32px">Draft structure only. This text must be reviewed and approved by the client's legal adviser before launch. It is not legal advice.</div>
+  ${[["What we collect","Information submitted through the RFQ form, quick enquiry form or contact form: name, company, job title, work email, telephone number, country, and any technical documents, drawings or images attached to an enquiry."],
+     ["Why we collect it","To review, quote and respond to component enquiries, and to maintain the commercial record of an enquiry through to supply."],
+     ["Uploaded documents","Technical drawings and documents attached to an RFQ are stored in a private location and are accessible only to authorised ET International personnel handling the enquiry. They are not published and are not shared beyond what is necessary to source and quote the requirement."],
+     ["Sharing","Enquiry details may be shared with qualified manufacturing sources for the purpose of quoting the requirement. The extent of this sharing is to be confirmed and stated explicitly."],
+     ["Retention","Retention period to be confirmed by the client."],
+     ["Cookies and analytics","Analytics and marketing tags (Google Analytics, Meta Pixel, LinkedIn Insight) are configured in the admin area. Where enabled, consent is requested before non-essential tags load."],
+     ["Your rights","Rights of access, correction and deletion, and the process for exercising them, to be confirmed against the applicable jurisdiction."],
+     ["Contact","Privacy enquiries: sales@etinternational.ae · ET International DMCC, Cluster O, Jumeirah Lakes Towers, Dubai, UAE."]]
+    .map(([t,d],i)=>`<div class="rv" style="margin-bottom:34px"><span class="mono" style="color:var(--cyan)">${String(i+1).padStart(2,"0")}</span><h3 style="margin:8px 0 10px">${esc(t)}</h3><p>${esc(d)}</p></div>`).join("")}
+</div></section>`;
+
+pages.notFound = () => `
+<section class="section" style="padding-top:180px;min-height:70svh"><div class="wrap" style="text-align:center">
+  <span class="mono" style="color:var(--cyan);font-size:56px;letter-spacing:.1em;display:block;margin-bottom:20px">404</span>
+  <h1 class="display-l">This part isn't in the catalogue.</h1>
+  <p class="body-l" style="margin:20px auto 32px">The page you requested doesn't exist. If you're looking for a specific component, search the product categories or send us the requirement directly.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a class="btn" href="#/products">Browse products</a>
+    <a class="btn btn--ghost" href="#/request-a-quote">Request a quote</a>
+  </div>
+</div></section>`;
+
+/* ============================================================
+   RFQ WIZARD
+   ============================================================ */
+const RFQ_STEPS=["Contact","Turbine","Parts","Files","Details","Review"];
+let W = null;
+
+function newRFQ(params){
+  return {
+    step:0,
+    contact:{name:"",company:"",job_title:"",email:"",phone:"",country:""},
+    turbine:{type:"",platform:params.get("platform")||"",manufacturer:"",site_name:"",delivery_location:""},
+    items:[{part_name:params.get("category")?cat(params.get("category"))?.name||"":"",part_number:"",quantity:"",unit:"pcs",required_date:"",description:""}],
+    files:[],
+    req:{certification:"",inspection:"",incoterms:"",comments:params.get("service")?`Service enquiry: ${params.get("service")}`:"",preferred_contact:"Email"},
+    consent:false,
+    prefill:{zone:params.get("zone")||"",category:params.get("category")||"",source:location.hash},
+    ref:null, t0:Date.now()
+  };
+}
+
+pages.rfq = (params) => {
+  const draft = DRAFT.load();
+  W = (draft && !params.toString()) ? draft : newRFQ(params);
+  const pre = W.prefill.category||W.prefill.zone||W.turbine.platform;
+  return `
+<section class="pagehead"><div class="wrap">
+  ${crumbs([["Home","#/"],["Request a quote"]])}
+  <h1 class="display-l">Request a quote</h1>
+  <p class="body-l" style="margin-top:20px">Six steps. Attach drawings if you have them — a photograph of the existing component works too. Every enquiry is reviewed by an engineer before quotation.</p>
+  ${pre?`<div class="note" style="margin-top:24px">Pre-filled from your selection: ${[W.turbine.platform&&plat(W.turbine.platform)?.name, W.prefill.zone&&zone(W.prefill.zone)?.label, W.prefill.category&&cat(W.prefill.category)?.name].filter(Boolean).map(esc).join(" · ")}</div>`:""}
+</div></section>
+<section class="section"><div class="wrap" style="max-width:900px">
+  <div class="rail" id="rail"></div>
+  <div id="wizBody"></div>
+</div></section>`;
+};
+
+function renderWizard(){
+  const rail=q("#rail"), body=q("#wizBody"); if(!rail||!body) return;
+  rail.innerHTML = RFQ_STEPS.map((s,i)=>`<div class="rail-step ${i===W.step?"on":""} ${i<W.step?"done":""}"><span>${i+1}. ${s}</span></div>`).join("");
+  body.innerHTML = [step1,step2,step3,step4,step5,step6][W.step]();
+  bindWizard();
+  body.scrollIntoView({block:"start",behavior:"smooth"});
+}
+
+const nav=(back=true,next="Continue")=>`<div class="wiz-nav">
+  ${back?`<button class="btn btn--ghost" data-back>← Back</button>`:`<span></span>`}
+  <button class="btn" data-next>${next}</button></div>`;
+
+const fld=(id,label,val,type="text",req=false,ph="")=>`
+  <div><label class="lbl" for="${id}">${label} ${req?'<span class="req">*</span>':'<span class="dim">(optional)</span>'}</label>
+  <input class="field" id="${id}" type="${type}" value="${esc(val)}" placeholder="${esc(ph)}" ${req?"required":""}>
+  <p class="errmsg" data-for="${id}">Required</p></div>`;
+
+const step1=()=>`
+  <span class="eyebrow">Step 1 of 6</span><h2 style="margin-bottom:26px">Contact information</h2>
+  <div class="fgrid">
+    ${fld("f_name","Full name",W.contact.name,"text",true)}
+    ${fld("f_company","Company name",W.contact.company,"text",true)}
+    ${fld("f_title","Job title",W.contact.job_title)}
+    ${fld("f_email","Work email",W.contact.email,"email",true)}
+    ${fld("f_phone","Phone number",W.contact.phone,"tel",true,"+971 …")}
+    ${fld("f_country","Country",W.contact.country,"text",true)}
+  </div>${nav(false)}`;
+
+const step2=()=>`
+  <span class="eyebrow">Step 2 of 6</span><h2 style="margin-bottom:26px">Turbine information</h2>
+  <div class="fgrid">
+    <div><label class="lbl" for="f_ttype">Turbine type <span class="req">*</span></label>
+      <select class="field" id="f_ttype" required><option value="">Select…</option>
+      ${["Gas turbine","Steam turbine","Both","Not sure"].map(t=>`<option ${W.turbine.type===t?"selected":""}>${t}</option>`).join("")}</select>
+      <p class="errmsg" data-for="f_ttype">Required</p></div>
+    <div><label class="lbl" for="f_plat">Turbine platform <span class="req">*</span></label>
+      <select class="field" id="f_plat" required><option value="">Select…</option>
+      ${PLATFORMS.map(p=>`<option value="${p.slug}" ${W.turbine.platform===p.slug?"selected":""}>${esc(p.name)}</option>`).join("")}
+      <option value="other" ${W.turbine.platform==="other"?"selected":""}>Other / not listed</option></select>
+      <p class="errmsg" data-for="f_plat">Required</p></div>
+    ${fld("f_manu","Manufacturer or design",W.turbine.manufacturer,"text",false,"e.g. GE-designed")}
+    ${fld("f_site","Site or plant name",W.turbine.site_name)}
+  </div>
+  <div style="margin-top:18px">${fld("f_deliv","Required delivery location",W.turbine.delivery_location,"text",true,"City, country")}</div>
+  ${nav()}`;
+
+const step3=()=>`
+  <span class="eyebrow">Step 3 of 6</span><h2 style="margin-bottom:8px">Part requirement</h2>
+  <p style="margin-bottom:26px">Add every line item you need quoted. Part numbers help but aren't required — a description and a drawing are enough.</p>
+  <div id="items">${W.items.map((it,i)=>lineItem(it,i)).join("")}</div>
+  <button class="btn btn--ghost btn--sm" data-add-item>+ Add another part</button>
+  ${nav()}`;
+
+function lineItem(it,i){
+  return `<div class="li" data-i="${i}">
+    <span class="li-no">Item ${String(i+1).padStart(2,"0")}</span>
+    ${W.items.length>1?`<button class="li-del" data-del="${i}">Remove</button>`:""}
+    <div class="fgrid">
+      <div><label class="lbl">Part name <span class="req">*</span></label><input class="field li-f" data-k="part_name" value="${esc(it.part_name)}" required><p class="errmsg" data-for="li${i}_part_name">Required</p></div>
+      <div><label class="lbl">Part number <span class="dim">(optional)</span></label><input class="field li-f" data-k="part_number" value="${esc(it.part_number)}" style="font-family:var(--font-mono)"></div>
+      <div><label class="lbl">Quantity <span class="req">*</span></label><input class="field li-f" data-k="quantity" type="number" min="1" value="${esc(it.quantity)}" required><p class="errmsg" data-for="li${i}_quantity">Required</p></div>
+      <div><label class="lbl">Unit</label><select class="field li-f" data-k="unit">${["pcs","sets","kg","m","lots"].map(u=>`<option ${it.unit===u?"selected":""}>${u}</option>`).join("")}</select></div>
+      <div><label class="lbl">Required delivery date <span class="dim">(optional)</span></label><input class="field li-f" data-k="required_date" type="date" value="${esc(it.required_date)}"></div>
+      <div><label class="lbl">Description <span class="dim">(optional)</span></label><input class="field li-f" data-k="description" value="${esc(it.description)}" placeholder="Stage, position, condition…"></div>
+    </div>
+  </div>`;
+}
+
+const step4=()=>`
+  <span class="eyebrow">Step 4 of 6</span><h2 style="margin-bottom:8px">File uploads</h2>
+  <p style="margin-bottom:26px">RFQ documents, technical drawings, datasheets, photographs or existing part information. PDF, Excel, Word and image formats. 10 MB per file, 10 files maximum.</p>
+  <div class="drop" id="drop">
+    <p class="mono" style="color:var(--cyan)">Drop files here</p>
+    <p style="margin:10px auto 18px;font-size:14px">or</p>
+    <button class="btn btn--ghost btn--sm" id="pick">Choose files</button>
+    <input type="file" id="fileIn" multiple accept=".pdf,.xlsx,.xls,.doc,.docx,.jpg,.jpeg,.png" hidden>
+  </div>
+  <div class="flist" id="flist">${W.files.map(fileRow).join("")}</div>
+  <div class="note" style="margin-top:20px">Uploaded documents are stored privately and are visible only to ET International personnel handling this enquiry. They are never published.</div>
+  ${nav(true,"Continue")}`;
+
+const fileRow=(f,i)=>`<div class="frow"><span>${esc(f.name)}</span><span style="display:flex;gap:12px;align-items:center"><span class="dim">${(f.size/1024).toFixed(0)} KB</span><button class="li-del" data-delfile="${i}" style="position:static">Remove</button></span></div>`;
+
+const step5=()=>`
+  <span class="eyebrow">Step 5 of 6</span><h2 style="margin-bottom:26px">Additional information</h2>
+  <div class="fgrid">
+    ${fld("f_cert","Required certification",W.req.certification,"text",false,"e.g. material certificates, EN 10204 3.1")}
+    ${fld("f_insp","Inspection requirements",W.req.inspection,"text",false,"e.g. third-party witness, dimensional report")}
+    <div><label class="lbl" for="f_inco">Incoterms <span class="dim">(if known)</span></label>
+      <select class="field" id="f_inco"><option value="">Not specified</option>
+      ${["EXW","FCA","FOB","CFR","CIF","CPT","CIP","DAP","DDP"].map(x=>`<option ${W.req.incoterms===x?"selected":""}>${x}</option>`).join("")}</select></div>
+    <div><label class="lbl" for="f_pref">Preferred communication</label>
+      <select class="field" id="f_pref">${["Email","Phone","WhatsApp","Either"].map(x=>`<option ${W.req.preferred_contact===x?"selected":""}>${x}</option>`).join("")}</select></div>
+  </div>
+  <div style="margin-top:18px"><label class="lbl" for="f_comm">Additional comments</label><textarea class="field" id="f_comm" rows="4">${esc(W.req.comments)}</textarea></div>
+  ${nav(true,"Review enquiry")}`;
+
+function step6(){
+  const kv=(o,map)=>Object.entries(map).map(([k,l])=>`<dt>${l}</dt><dd>${o[k]?esc(o[k]):'<span class="ph" style="font-style:italic">Not provided</span>'}</dd>`).join("");
+  return `
+  <span class="eyebrow">Step 6 of 6</span><h2 style="margin-bottom:26px">Review &amp; submit</h2>
+  <div class="review-block"><h3>Contact information <button class="link-c" data-goto="0">Edit</button></h3>
+    <dl class="kv">${kv(W.contact,{name:"Full name",company:"Company",job_title:"Job title",email:"Work email",phone:"Phone",country:"Country"})}</dl></div>
+  <div class="review-block"><h3>Turbine information <button class="link-c" data-goto="1">Edit</button></h3>
+    <dl class="kv">
+      <dt>Turbine type</dt><dd>${esc(W.turbine.type)}</dd>
+      <dt>Platform</dt><dd>${esc(plat(W.turbine.platform)?.name||W.turbine.platform||"—")}</dd>
+      <dt>Manufacturer / design</dt><dd>${W.turbine.manufacturer?esc(W.turbine.manufacturer):'<span class="ph" style="font-style:italic">Not provided</span>'}</dd>
+      <dt>Site or plant</dt><dd>${W.turbine.site_name?esc(W.turbine.site_name):'<span class="ph" style="font-style:italic">Not provided</span>'}</dd>
+      <dt>Delivery location</dt><dd>${esc(W.turbine.delivery_location)}</dd>
+    </dl></div>
+  <div class="review-block"><h3>Parts — ${W.items.length} line item${W.items.length>1?"s":""} <button class="link-c" data-goto="2">Edit</button></h3>
+    <div style="padding:6px 0">
+    <table class="spec" style="border:0">
+      <tr><th style="width:auto">Part</th><th style="width:auto">Part number</th><th style="width:auto">Qty</th><th style="width:auto">Required</th></tr>
+      ${W.items.map(it=>`<tr>
+        <td>${esc(it.part_name)}${it.description?`<br><span class="caption">${esc(it.description)}</span>`:""}</td>
+        <td style="font-family:var(--font-mono);font-size:12px">${it.part_number?esc(it.part_number):"—"}</td>
+        <td>${esc(it.quantity)} ${esc(it.unit)}</td>
+        <td>${it.required_date?esc(it.required_date):"—"}</td></tr>`).join("")}
+    </table></div></div>
+  <div class="review-block"><h3>Files — ${W.files.length} attached <button class="link-c" data-goto="3">Edit</button></h3>
+    <div style="padding:18px">${W.files.length?W.files.map(f=>`<div class="frow" style="margin-bottom:8px"><span>${esc(f.name)}</span><span class="dim">${(f.size/1024).toFixed(0)} KB</span></div>`).join(""):`<p class="caption">No files attached. Drawings or photographs speed up quotation considerably.</p>`}</div></div>
+  <div class="review-block"><h3>Additional information <button class="link-c" data-goto="4">Edit</button></h3>
+    <dl class="kv">${kv(W.req,{certification:"Certification",inspection:"Inspection",incoterms:"Incoterms",preferred_contact:"Preferred contact",comments:"Comments"})}</dl></div>
+  <div class="check" style="margin-top:26px">
+    <input type="checkbox" id="consent" ${W.consent?"checked":""}>
+    <label for="consent">I consent to ET International DMCC storing and processing this enquiry and any attached documents for the purpose of reviewing and quoting the requirement, in line with the <a class="link-c" href="#/privacy" style="font-size:13px">privacy policy</a>. <span class="req" style="color:var(--cyan)">*</span></label>
+  </div>
+  <p class="errmsg" data-for="consent" style="margin-top:8px">Consent is required before submitting</p>
+  <input type="text" id="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+  ${nav(true,"Submit RFQ →")}`;
+}
+
+function refNo(){
+  const d=new Date();
+  const yy=String(d.getFullYear()).slice(2), mm=String(d.getMonth()+1).padStart(2,"0");
+  const n=String(Math.floor(Math.random()*9000)+1000);
+  return `ETI-RFQ-${yy}${mm}-${n}`;
+}
+
+function submitRFQ(){
+  const hp=q("#hp");
+  if(hp && hp.value){ return; }                       // honeypot
+  if(Date.now()-W.t0 < 3000){ toast("Please review before submitting"); return; }  // timing check
+  W.ref = refNo();
+
+  /* --- API BOUNDARY -------------------------------------------------
+     Production wiring (backend or Base44):
+       POST /api/rfq  → create rfqs record (status: "new") + rfq_line_items
+       POST /api/rfq/:id/files → private bucket, signed URLs, virus scan
+       → notify sales@etinternational.ae with the reference number
+       → acknowledgement email to W.contact.email
+     Stubbed here — the payload below is the exact contract.
+  ------------------------------------------------------------------- */
+  console.log("RFQ payload →", JSON.stringify({
+    reference:W.ref, status:"new", contact:W.contact, turbine:W.turbine,
+    line_items:W.items, files:W.files.map(f=>({name:f.name,size:f.size,type:f.type})),
+    requirements:W.req, consent_given:W.consent, prefill_context:W.prefill,
+    source_page:W.prefill.source, created_at:new Date().toISOString()
+  },null,2));
+
+  DRAFT.data=null;
+  q("#main").innerHTML=`
+  <section class="conf"><div class="wrap">
+    <span class="eyebrow">Enquiry received</span>
+    <h1 class="display-l">Your RFQ is with our engineering team.</h1>
+    <div class="ref"><span>${W.ref}</span><button class="copy" data-copy="${W.ref}">Copy</button></div>
+    <p style="margin:0 auto 10px">An acknowledgement has been sent to <strong style="color:var(--white)">${esc(W.contact.email)}</strong>. Quote this reference in any follow-up.</p>
+    <p class="caption" style="margin:0 auto 36px">${W.items.length} line item${W.items.length>1?"s":""} · ${W.files.length} file${W.files.length===1?"":"s"} attached · Platform: ${esc(plat(W.turbine.platform)?.name||W.turbine.platform||"—")}</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--ghost" href="#/products">Back to products</a>
+      <a class="btn btn--ghost" href="#/">Home</a>
+    </div>
+    <div class="note" style="max-width:640px;margin:44px auto 0;text-align:left">Demo build: the reference number is generated client-side and the submission is logged to the browser console rather than sent. Email dispatch and database storage connect at the API boundary marked in the source.</div>
+  </div></section>`;
+  window.scrollTo(0,0);
+}
+
+/* ---- wizard binding ---- */
+function bindWizard(){
+  const B=q("#wizBody"); if(!B) return;
+
+  B.querySelector("[data-back]")?.addEventListener("click",()=>{ collect(); W.step--; DRAFT.save(W); renderWizard(); });
+  B.querySelector("[data-next]")?.addEventListener("click",()=>{
+    collect();
+    if(!validate()) return;
+    DRAFT.save(W);
+    if(W.step===5){ submitRFQ(); return; }
+    W.step++; renderWizard();
+  });
+  B.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>{ W.step=+b.dataset.goto; renderWizard(); }));
+
+  B.querySelector("[data-add-item]")?.addEventListener("click",()=>{
+    collect(); W.items.push({part_name:"",part_number:"",quantity:"",unit:"pcs",required_date:"",description:""}); renderWizard();
+  });
+  B.querySelectorAll("[data-del]").forEach(b=>b.addEventListener("click",()=>{
+    collect(); W.items.splice(+b.dataset.del,1); renderWizard();
+  }));
+
+  const drop=B.querySelector("#drop");
+  if(drop){
+    const input=B.querySelector("#fileIn");
+    B.querySelector("#pick").addEventListener("click",()=>input.click());
+    input.addEventListener("change",e=>addFiles(e.target.files));
+    ["dragenter","dragover"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add("over")}));
+    ["dragleave","drop"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove("over")}));
+    drop.addEventListener("drop",e=>addFiles(e.dataTransfer.files));
+    B.querySelectorAll("[data-delfile]").forEach(b=>b.addEventListener("click",()=>{ W.files.splice(+b.dataset.delfile,1); renderWizard(); }));
+  }
+}
+
+function addFiles(list){
+  const ok=/\.(pdf|xlsx?|docx?|jpe?g|png)$/i;
+  [...list].forEach(f=>{
+    if(W.files.length>=10) return toast("Maximum 10 files");
+    if(!ok.test(f.name)) return toast(`${f.name}: file type not accepted`);
+    if(f.size>10*1024*1024) return toast(`${f.name}: over 10 MB`);
+    W.files.push({name:f.name,size:f.size,type:f.type});
+  });
+  renderWizard();
+}
+
+function collect(){
+  const g=id=>q("#"+id)?.value.trim()??"";
+  if(W.step===0) W.contact={name:g("f_name"),company:g("f_company"),job_title:g("f_title"),email:g("f_email"),phone:g("f_phone"),country:g("f_country")};
+  if(W.step===1) W.turbine={type:g("f_ttype"),platform:g("f_plat"),manufacturer:g("f_manu"),site_name:g("f_site"),delivery_location:g("f_deliv")};
+  if(W.step===2) document.querySelectorAll("#items .li").forEach((el,i)=>{
+    el.querySelectorAll(".li-f").forEach(f=>{ W.items[i][f.dataset.k]=f.value.trim(); });
+  });
+  if(W.step===4) W.req={certification:g("f_cert"),inspection:g("f_insp"),incoterms:g("f_inco"),comments:g("f_comm"),preferred_contact:g("f_pref")};
+  if(W.step===5) W.consent=!!q("#consent")?.checked;
+}
+
+function fail(id,msg){
+  const el=q("#"+id), m=document.querySelector(`.errmsg[data-for="${id}"]`);
+  el?.classList.add("err"); if(m){ m.textContent=msg; m.classList.add("show"); }
+  return false;
+}
+function clearErrs(){ document.querySelectorAll(".err").forEach(e=>e.classList.remove("err")); document.querySelectorAll(".errmsg.show").forEach(e=>e.classList.remove("show")); }
+
+function validate(){
+  clearErrs(); let ok=true;
+  const need=(id,msg="Required")=>{ if(!q("#"+id)?.value.trim()){ fail(id,msg); ok=false; } };
+  if(W.step===0){
+    ["f_name","f_company","f_email","f_phone","f_country"].forEach(id=>need(id));
+    const e=q("#f_email")?.value.trim();
+    if(e && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e)){ fail("f_email","Enter a valid work email address"); ok=false; }
+  }
+  if(W.step===1){ ["f_ttype","f_plat","f_deliv"].forEach(id=>need(id)); }
+  if(W.step===2){
+    document.querySelectorAll("#items .li").forEach((el,i)=>{
+      el.querySelectorAll(".li-f").forEach(f=>{
+        if((f.dataset.k==="part_name"||f.dataset.k==="quantity") && !f.value.trim()){
+          f.classList.add("err");
+          const m=el.querySelector(`.errmsg[data-for="li${i}_${f.dataset.k}"]`); if(m) m.classList.add("show");
+          ok=false;
+        }
+      });
+    });
+    if(!ok) toast("Complete every line item, or remove it");
+  }
+  if(W.step===5 && !q("#consent")?.checked){
+    document.querySelector('.errmsg[data-for="consent"]')?.classList.add("show"); ok=false;
+  }
+  if(!ok && W.step!==2) toast("Check the highlighted fields");
+  return ok;
+}
+
+/* ============================================================
+   EXPLORER
+   ============================================================ */
+let EX={platform:PLATFORMS[0].slug, zone:null};
+
+function renderExplorer(){
+  const root=q("#explorerRoot"); if(!root) return;
+  const isNarrow=window.matchMedia("(max-width:980px)").matches;
+  root.innerHTML=`
+    <div class="tabs" role="tablist">${PLATFORMS.map(p=>`<button class="tab ${EX.platform===p.slug?"on":""}" role="tab" aria-selected="${EX.platform===p.slug}" data-plat="${p.slug}">${esc(p.name)}</button>`).join("")}</div>
+    ${isNarrow?mobileExplorer():`<div class="explorer">
+      <div class="stage rv">${turbineSVG()}<p class="hint" style="margin-top:8px">Select a section of the machine</p></div>
+      <div id="zonePanel"></div>
+    </div>`}`;
+
+  root.querySelectorAll("[data-plat]").forEach(b=>b.addEventListener("click",()=>{ EX.platform=b.dataset.plat; EX.zone=null; renderExplorer(); }));
+
+  if(!isNarrow){
+    root.querySelectorAll(".zone").forEach(g=>{
+      const sel=()=>{ EX.zone=g.dataset.zone; root.querySelectorAll(".zone").forEach(x=>x.classList.toggle("on",x===g)); renderPanel(); };
+      g.addEventListener("click",sel);
+      g.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); sel(); }});
+    });
+    renderPanel();
+  } else {
+    root.querySelectorAll(".acc-btn").forEach(b=>b.addEventListener("click",()=>{
+      const open=b.getAttribute("aria-expanded")==="true";
+      root.querySelectorAll(".acc-btn").forEach(x=>{x.setAttribute("aria-expanded","false");x.nextElementSibling.classList.remove("open")});
+      if(!open){ b.setAttribute("aria-expanded","true"); b.nextElementSibling.classList.add("open"); }
+    }));
+  }
+  observe(root);
+}
+
+function panelBody(Z){
+  const p=plat(EX.platform);
+  return `
+    <span class="eyebrow" style="color:${Z.hot?"var(--heat)":"var(--cyan)"}">${esc(p.name)} · ${Z.hot?"Hot gas path":"Component section"}</span>
+    <h3 style="font-size:24px">${esc(Z.label)}</h3>
+    <dl>
+      <div><dt>Technical description</dt><dd>${esc(Z.desc)}</dd></div>
+      <div><dt>Typical application</dt><dd>${esc(Z.app)}</dd></div>
+      <div><dt>Engineering support</dt><dd>${esc(Z.support)}</dd></div>
+      <div><dt>Categories supplied</dt><dd>${Z.cats.map(c=>cat(c)?.name).filter(Boolean).map(esc).join(" · ")}</dd></div>
+    </dl>
+    <div class="panel-cta">
+      <a class="btn btn--sm" href="#/request-a-quote?platform=${EX.platform}&zone=${Z.slug}&category=${Z.cats[0]}">Request this part</a>
+      <a class="btn btn--ghost btn--sm" href="#/products?platform=${EX.platform}&zone=${Z.slug}">View products</a>
+    </div>`;
+}
+
+function renderPanel(){
+  const el=q("#zonePanel"); if(!el) return;
+  if(!EX.zone){
+    const p=plat(EX.platform);
+    el.innerHTML=`<div class="panel">
+      <span class="eyebrow">${esc(p.name)}</span>
+      <h3 style="font-size:22px">${esc(p.name)} component supply</h3>
+      <p style="font-size:14px;margin-top:14px">${esc(p.summary)}</p>
+      <p class="hint" style="margin-top:24px">← Select a section of the turbine to see what is supplied there</p>
+      <div class="panel-cta"><a class="btn btn--ghost btn--sm" href="#/turbine-platforms/${p.slug}">All ${esc(p.name)} categories</a></div>
+    </div>`;
+    return;
+  }
+  const Z=zone(EX.zone);
+  el.innerHTML=`<div class="panel ${Z.hot?"hot":""}">${panelBody(Z)}</div>`;
+}
+
+function mobileExplorer(){
+  return `<div class="acc">
+    ${ZONES.map((Z,i)=>`<div class="acc-item">
+      <button class="acc-btn" aria-expanded="false"><span>${esc(Z.label)}</span><span style="color:${Z.hot?"var(--heat)":"var(--cyan)"}">${Z.hot?"◆ hot":"+"}</span></button>
+      <div class="acc-body">${panelBody(Z)}</div>
+    </div>`).join("")}
+  </div>`;
+}
+
+/* ============================================================
+   PRODUCTS FILTERING
+   ============================================================ */
+function bindProducts(params){
+  const grid=q("#pgrid"); if(!grid) return;
+  const ids=["fq","fcat","fplat","fzone","fserv"];
+  const apply=()=>{
+    const s=q("#fq").value.toLowerCase().trim(), c=q("#fcat").value, p=q("#fplat").value, z=q("#fzone").value, sv=q("#fserv").value;
+    const out=CATEGORIES.filter(x=>
+      (!c||x.slug===c) && (!p||x.platforms.includes(p)) && (!z||x.zone===z) && (!sv||x.services.includes(sv)) &&
+      (!s || (x.name+" "+x.one+" "+x.overview+" "+x.apps.join(" ")).toLowerCase().includes(s))
+    );
+    grid.innerHTML = out.length ? out.map(productCard).join("") :
+      `<div class="card" style="grid-column:1/-1;text-align:center;padding:64px 24px">
+        <p class="mono dim">No components match those filters</p>
+        <p style="margin:12px auto 20px">Clear a filter, or send us the requirement directly — we supply components outside the published categories.</p>
+        <a class="btn btn--ghost btn--sm" href="#/request-a-quote">Describe your requirement</a></div>`;
+    q("#pcount").textContent = `${out.length} of ${CATEGORIES.length} categories`;
+    const u=new URLSearchParams(); if(s)u.set("q",s); if(c)u.set("category",c); if(p)u.set("platform",p); if(z)u.set("zone",z); if(sv)u.set("service",sv);
+    history.replaceState(null,"",`#/products${u.toString()?"?"+u:""}`);
+    grid.querySelectorAll(".rv").forEach(e=>e.classList.add("in"));
+  };
+  ids.forEach(id=>{ const el=q("#"+id); el.addEventListener(el.tagName==="SELECT"?"change":"input",apply); });
+  apply();
+}
+
+/* ============================================================
+   ROUTER + CHROME
+   ============================================================ */
+function route(){
+  const raw = location.hash.replace(/^#/,"") || "/";
+  const [path,qs] = raw.split("?");
+  const params = new URLSearchParams(qs||"");
+  const seg = path.split("/").filter(Boolean);
+  let html, title="ET International DMCC";
+
+  if(seg.length===0){ html=pages.home(); title="ET International DMCC — Gas & Steam Turbine Spare Parts Supplier, Dubai"; }
+  else if(seg[0]==="about"){ html=pages.about(); title="About ET International DMCC — Turbine Component Supply"; }
+  else if(seg[0]==="products" && seg[1]){ const c=cat(seg[1]); html=pages.productDetail(seg[1]); title=c?`${c.name} — ET International DMCC`:"Not found"; }
+  else if(seg[0]==="products"){ html=pages.products(params); title="Turbine Spare Parts & Components — ET International DMCC"; }
+  else if(seg[0]==="turbine-platforms" && seg[1]){ const p=plat(seg[1]); html=pages.platformDetail(seg[1]); title=p?`${p.name} Turbine Parts — ET International DMCC`:"Not found"; }
+  else if(seg[0]==="turbine-platforms"){ html=pages.platforms(); title="Turbine Platforms — ET International DMCC"; }
+  else if(seg[0]==="services" && seg[1]){ const s=SERVICES.find(x=>x.slug===seg[1]); html=pages.serviceDetail(seg[1]); title=s?`${s.name} — ET International DMCC`:"Not found"; }
+  else if(seg[0]==="services"){ html=pages.services(); title="Services & Capabilities — ET International DMCC"; }
+  else if(seg[0]==="quality"){ html=pages.quality(); title="Quality & Certification — ET International DMCC"; }
+  else if(seg[0]==="industries"){ html=pages.industries(); title="Industries We Support — ET International DMCC"; }
+  else if(seg[0]==="request-a-quote"){ html=pages.rfq(params); title="Request a Quote — ET International DMCC"; }
+  else if(seg[0]==="contact"){ html=pages.contact(); title="Contact — ET International DMCC"; }
+  else if(seg[0]==="privacy"){ html=pages.privacy(); title="Privacy Policy — ET International DMCC"; }
+  else { html=pages.notFound(); title="Page not found — ET International DMCC"; }
+
+  document.title=title;
+  q("#main").innerHTML=html;
+
+  const cur="#"+(path==="/"?"/":path.replace(/\/$/,""));
+  document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("active", a.getAttribute("href")===cur || (seg[0] && a.getAttribute("href")==="#/"+seg[0])));
+
+  if(seg.length===0) renderExplorer();
+  if(seg[0]==="products" && !seg[1]) bindProducts(params);
+  if(seg[0]==="request-a-quote") renderWizard();
+  bindGlobal();
+  observe(document);
+  if(!location.hash.includes("#explorer")) window.scrollTo(0,0);
+  onScroll();
+}
+
+function bindGlobal(){
+  document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",async()=>{
+    try{ await navigator.clipboard.writeText(b.dataset.copy); toast("Copied to clipboard"); }
+    catch{ toast("Copy unavailable in this context"); }
+  }));
+  document.querySelectorAll("[data-spec-sheet]").forEach(b=>b.addEventListener("click",()=>toast("Specification sheet — awaiting upload in admin")));
+  ["quickForm","quickFormInline","contactForm"].forEach(id=>{
+    const f=document.getElementById(id); if(!f) return;
+    f.addEventListener("submit",e=>{
+      e.preventDefault();
+      if(f.website?.value) return;
+      const bad=[...f.querySelectorAll("[required]")].filter(el=>el.type==="checkbox"?!el.checked:!el.value.trim());
+      bad.forEach(el=>el.classList.add("err"));
+      if(bad.length){ toast("Complete the required fields"); return; }
+      /* API BOUNDARY: POST /api/enquiries → enquiries collection + notify sales@ */
+      console.log("Enquiry payload →", Object.fromEntries(new FormData(f)));
+      f.innerHTML=`<div style="text-align:center;padding:20px 0"><p class="mono" style="color:var(--cyan)">Enquiry sent</p><p style="font-size:14px;margin-top:10px">We'll come back to you by email. For a full requirement, use the <a class="link-c" href="#/request-a-quote" style="font-size:13px">RFQ form</a>.</p></div>`;
+    });
+    f.querySelectorAll("input,textarea").forEach(el=>el.addEventListener("input",()=>el.classList.remove("err")));
+  });
+}
+
+/* Reveal + flow line */
+let io;
+function observe(root){
+  io = io || new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    e.target.classList.add("in");
+    const fl=e.target.querySelector?.("[data-flowline]");
+    if(fl) setTimeout(()=>{ fl.style.height=(e.target.offsetHeight-12)+"px"; },200);
+    io.unobserve(e.target);
+  }),{threshold:.12,rootMargin:"0px 0px -40px"});
+  root.querySelectorAll(".rv:not(.in)").forEach(el=>io.observe(el));
+  document.querySelectorAll(".flow").forEach(el=>io.observe(el));
+}
+
+function onScroll(){ q("#hdr").classList.toggle("solid", window.scrollY>80 || !location.hash.match(/^#\/?$/)); }
+
+let tt;
+function toast(msg){
+  const t=q("#toast"); t.textContent=msg; t.classList.add("on");
+  clearTimeout(tt); tt=setTimeout(()=>t.classList.remove("on"),2600);
+}
+
+/* Boot */
+q("#nav").innerHTML=NAV.map(([n,h])=>`<a href="${h}">${n}</a>`).join("");
+q("#mmNav").innerHTML=NAV.map(([n,h])=>`<a href="${h}">${n}</a>`).join("");
+q("#ftr").innerHTML=footer();
+
+const mm=q("#mm");
+const openMM=()=>{ mm.classList.add("open"); mm.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; mm.querySelector("a")?.focus(); };
+const closeMM=()=>{ mm.classList.remove("open"); mm.setAttribute("aria-hidden","true"); document.body.style.overflow=""; };
+q("#burger").addEventListener("click",openMM);
+q("#mmClose").addEventListener("click",closeMM);
+mm.addEventListener("click",e=>{ if(e.target.tagName==="A") closeMM(); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeMM(); });
+
+window.addEventListener("hashchange",route);
+window.addEventListener("scroll",onScroll,{passive:true});
+window.addEventListener("resize",()=>{ if(location.hash.replace(/^#/,"").split("?")[0].replace(/\//g,"")==="") renderExplorer(); });
+route();
+</script>
+</body>
+</html>
